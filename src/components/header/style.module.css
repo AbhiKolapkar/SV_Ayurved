@@ -1,0 +1,70 @@
+/* header section CSS */
+.header {
+  width: 100%;
+  height: 100px;
+  line-height: 1.5;
+  background-color: #dfdfdf;
+}
+
+.toolbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 30px; */
+}
+
+.toolbar .menu {
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+}
+
+.menuItem {
+  display: block;
+  padding-block: 3px;
+  position: relative;
+}
+
+.menuItem:hover,
+.active {
+  color: var(--light-green);
+}
+
+.header .menuItem.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  transform: translate(50%, 50%);
+  background-color: var(--light-green);
+}
+
+.is_sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+  background-color: #ffffff;
+  transition: all 0.3s ease-in;
+}
+
+
+@media screen and (max-width: 900px) {
+  .toolbar .menu {
+    justify-content: right;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .btn {
+    display: none;
+  }
+}

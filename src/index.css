@@ -1,13 +1,101 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/********************* Import Google fonts *********************/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+/********************* CSS Variables *********************/
+:root {
+  /* colors */
+  --white: #ffffff;
+  --black: #010101;
+  --dark-blue: #0f424d;
+  --dark-green: #869633;
+  --darker-green: #60682a;
+  --light-green: #acbd33;
+  --light-white: #eef2d6;
+
+  /* typography */
+  --poppins: "Poppins", sans-serif;
+  --playfair: "Playfair Display", serif;
+
+  /* margin */
+  --section-margin: 64px;
+  --inline-margin: 2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/********************* Reset CSS *********************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--poppins);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--white);
+  line-height: 1.7;
+  padding-bottom: 0.625rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  /* width: 100%; */
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+input:not([type="radio"]) {
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+button {
+  width: max-content;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  padding: 14px 28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+pre {
+  font-family: var(--poppins);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+/********** Custom Scroll-Bar **********/
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--light-white);
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--light-white);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--dark-blue);
 }
