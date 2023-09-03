@@ -12,7 +12,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 30px; */
 }
 
 .toolbar .menu {
@@ -44,17 +43,26 @@
   background-color: var(--light-green);
 }
 
-.is_sticky {
-  position: fixed;
+.header.is_sticky {
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0,  0.3);
   background-color: #ffffff;
-  transition: all 0.3s ease-in;
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease-out;
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
 @media screen and (max-width: 900px) {
   .toolbar .menu {
