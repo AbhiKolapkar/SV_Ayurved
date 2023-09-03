@@ -1,3 +1,19 @@
+/* **** import social icons **** */
+import facebook from '../assets/icons/facebook.svg'
+import instagram from '../assets/icons/instagram.svg'
+import linkedin from '../assets/icons/linkedin.svg'
+import youtube from '../assets/icons/youtube.svg'
+
+/* **** import contact icons **** */
+import location from '../assets/icons/location.svg'
+import location_bg from '../assets/icons/location-bg.svg'
+import mail from '../assets/icons/mail.svg'
+import mail_bg from '../assets/icons/mail_bg.svg'
+import phone from '../assets/icons/phone.svg'
+import phone_bg from '../assets/icons/phone_bg.svg'
+
+
+/* **** export PATHS **** */
 export const PATHS = {
   HOME_PATH: '/',
   HOME_PAGE: '/home',
@@ -10,7 +26,10 @@ export const PATHS = {
   BLOG_DETAILS_PAGE: '/blog/:Title',
   UPDATES_PAGE: '/updates',
   CONTACT_PAGE: '/contact',
+  PRIVACY_POLICY_PAGE: '/privacy',
+  TERMS_CONDITIONS_PAGE: '/terms',
 }
+
 
 export const NavLinks_Data = [
   {
@@ -47,7 +66,8 @@ export const NavLinks_Data = [
   },
 ]
 
-/*********************** dropdown navnavigation-menu Data ***********************/
+
+/*********************** dropdown navigation-menu Data ***********************/
 export const NavRoutes_Data = [
   {
     path: PATHS.HOME_PATH || PATHS.HOME_PAGE,
@@ -87,5 +107,70 @@ export const NavRoutes_Data = [
   {
     path: PATHS.SESSIONS_PAGE,
     title: "Sessions",
+  },
+];
+
+
+/*********************** miscellaneous-links Data ***********************/
+export const ExtraLinks_Data = [
+  {
+    path: PATHS.PRIVACY_POLICY_PAGE,
+    title: "Privacy Policy",
+  },
+  {
+    path: PATHS.TERMS_CONDITIONS_PAGE,
+    title: "Terms & Conditions",
+  },
+  {
+    path: PATHS.CONTACT_PAGE,
+    title: "Contact Us",
+  },
+];
+
+
+/*********************** social-links Data ***********************/
+export const SocialLinks_Data = [
+  {
+    id: 1,
+    platform: linkedin,
+    path: "",
+  },
+  {
+    id: 2,
+    platform: facebook,
+    path: "",
+  },
+  {
+    id: 3,
+    platform: instagram,
+    path: "",
+  },
+  {
+    id: 4,
+    platform: youtube,
+    path: "https://www.youtube.com/@dr.J1305",
+  },
+];
+
+/*********************** contacts Data ***********************/
+export const Contacts_Data = [
+  {
+    id: 1,
+    icon: location,
+    bgIcon: location_bg,
+    text: `Office no.110, Pallazo building, near Wisdom world school, Hadapsar, 
+Pune- 411 028`,
+  },
+  {
+    id: 2,
+    icon: mail,
+    bgIcon: mail_bg,
+    text: "vishwavajraayurved@gmail.com",
+  },
+  {
+    id: 3,
+    icon: phone,
+    bgIcon: phone_bg,
+    text: "7588682035",
   },
 ];
