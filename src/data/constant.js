@@ -12,6 +12,17 @@ import mail_bg from '../assets/icons/mail_bg.svg'
 import phone from '../assets/icons/phone.svg'
 import phone_bg from '../assets/icons/phone_bg.svg'
 
+/* **** all API Keys **** */
+const API_URL = "https://api.svayurved.com/";
+export const TREATMENTS_API_URL = API_URL + "getTreatments";
+export const SESSIONS_API_URL = API_URL + "getSessions";
+export const PROGRAMS_API_URL = API_URL + "enroll-programs";
+export const BLOGS_API_URL = API_URL + "getBlogs";
+export const BLOG_DETAILS_API_URL = API_URL + "blog";
+export const CONTACT_API_URL = API_URL + "user-contact";
+export const APPOINTMENT_API_URL = API_URL + "book-appointment";
+export const BOOKED_APPOINTMENT_API_URL = API_URL + "bookedAppointments";
+
 
 /* **** export PATHS **** */
 export const PATHS = {
