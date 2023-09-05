@@ -10,15 +10,14 @@ import { TREATMENTS_API_URL } from "../../data/constant";
 const Treatments = () => {
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { treatmentBanner } = BannerImages_Data;
-  const API_URL = TREATMENTS_API_URL;
   const [treatmentsData, setTreatmentsData] = useState(null);
 
   useEffect(() => {
     axios
-      .get(API_URL)
+      .get(TREATMENTS_API_URL)
       .then((res) => setTreatmentsData(res.data.treatments))
       .catch((error) => console.error("error fetching data", error));
-  }, [API_URL]);
+  }, []);
 
   return (
     <>

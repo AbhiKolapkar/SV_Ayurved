@@ -40,8 +40,8 @@ export const listOfDoctors = [
       },
       {
         day: "Wednesday",
-        startTime: "11:00 AM",
-        endTime: "06:30 PM",
+        startTime: "10:00 AM",
+        endTime: "08:30 PM",
       },
       {
         day: "Thursday",

@@ -8,16 +8,15 @@ import { BLOGS_API_URL } from "../../data/constant";
 const Blogs = () => {
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const [blogsData, setBlogsData] = useState([]);
-  const API_URL = BLOGS_API_URL;
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(BLOGS_API_URL)
       .then((res) => res.json())
       .then((data) => setBlogsData(data.blogs))
       .catch((err) => {
         throw new Error(err);
       });
-  }, [API_URL]);
+  }, []);
 
   return (
     <>

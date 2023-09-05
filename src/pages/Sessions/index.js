@@ -17,7 +17,7 @@ const Sessions = () => {
       .get(SESSIONS_API_URL)
       .then((res) => setSessionsData(res.data.sessions))
       .catch((error) => console.error("error fetching data", error));
-  }, [SESSIONS_API_URL]);
+  }, []);
 
   return (
     <>
