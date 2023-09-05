@@ -1,5 +1,7 @@
 import { DateTime } from "luxon";
 import { listOfDays, listOfMonths } from "./data";
+import axios from "axios";
+import { BOOKED_APPOINTMENT_API_URL } from "../../data/constant";
 
 export const addMonthsToDate = (date, numOfMonth) => {
   return new Date(date.setMonth(date.getMonth() + numOfMonth));
@@ -109,3 +111,18 @@ export const getTotalTimeSlots = (schedule, date, interval) => {
     return totalTimeSlots;
   }
 };
+
+
+export const fetchBookedAppointments = async () => {
+  try {
+    const response = await axios.get(BOOKED_APPOINTMENT_API_URL)
+    if (!response.statusText) {
+      throw new Error('Network response was not ok');
+    }
+    return response.data
+  }
+  catch (error) {
+    console.log('Error: ', error);
+    throw new Error(error)
+  }
+}

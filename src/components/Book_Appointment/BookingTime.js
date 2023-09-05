@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
-import axios from "axios";
 import { ReactComponent as CalendarIcon } from "../../assets/icons/calendar.svg";
 import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
 import {
   addMonthsToDate,
   extractHourAndMinute,
+  fetchBookedAppointments,
   get24HrsFrmAMPM,
   getAMPMFrm24Hrs,
-  getAndFormatTime,
   getTotalTimeSlots,
   normaliseDateToReadableString,
 } from "./utils";
-import { BOOKED_APPOINTMENT_API_URL } from "../../data/constant";
 
 const BookingTime = ({
   selectedProfile,
@@ -23,26 +21,32 @@ const BookingTime = ({
   const BOOKING_DURATION_MONTHS = 2;
   const START_DATE = new Date();
   const END_DATE = addMonthsToDate(new Date(), BOOKING_DURATION_MONTHS);
-  // console.log(istTime(START_DATE));
 
   const [timeDisplay, setTimeDisplay] = useState();
   const [calendarDate, setCalendarDate] = useState(START_DATE);
   const [calendarDisplay, setCalendarDisplay] = useState(false);
-  const [bookedSlots, setBookedSlots] = useState([]);
-  const [availableSlots, setAvailableSlots] = useState()
+  const [bookedAppointments, setBookedAppointments] = useState([]);
 
+  // setup booked-appointments in date and timeSlot object keys
   useEffect(() => {
-    axios
-      .get(BOOKED_APPOINTMENT_API_URL)
-      .then((res) => setBookedSlots(res.data.appointments))
-      .catch((error) => console.log(error));
-  }, [BOOKED_APPOINTMENT_API_URL]);
+    fetchBookedAppointments()
+      .then((data) => {
+        const bookedData = data.appointments.map(({ date, time }) => ({
+          date: new Date(date),
+          timeSlot: time,
+        }));
+        setBookedAppointments(bookedData);
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }, []);
 
   const onCalendarDisplay = () => {
     setCalendarDisplay(!calendarDisplay);
   };
-  
-  const getAvailableTimeSlots = (selectedDate) => {
+
+  const getWorkingTimeSlots = (selectedDate) => {
     let currentTime = new Date().getTime();
     let totalWorkingSlots = getTotalTimeSlots(
       selectedProfile.workSchedule,
@@ -72,26 +76,31 @@ const BookingTime = ({
     return availableWorkingSlots;
   };
 
-  const getReservedTimeSlots = (date) => {
-    const reservedSlots = bookedSlots.map(({date, time}) => {
-      return (new Date(`${date} ${time}`));
-    })
-    console.log(reservedSlots[date]);
-  }
+  const fetchAvailableTimeSlots = (date) => {
+    const totalWorkingTimeSlots = getWorkingTimeSlots(date);
 
-  // const fetchAvailableTimeSlots = (date) => {
-  //   const totalWorkingSlots = getAvailableTimeSlots(date)
-  //   const bookedTimeSlots = getReservedTimeSlots(date)
-  //   console.log(totalWorkingSlots);
-  // }
-  // fetchAvailableTimeSlots()
+    const selectedDateString = date.toDateString();
+
+    const bookedTimeSlots = bookedAppointments
+      .filter(
+        (appointment) => appointment.date.toDateString() === selectedDateString
+      )
+      .map((appointment) => appointment.timeSlot);
+
+    const availableTimeSlots = totalWorkingTimeSlots.map(slot => {
+      if(!bookedTimeSlots.includes(slot)) return {available: true, slot}
+      return {available: false, slot}
+    })
+
+    return availableTimeSlots;
+  };
 
   const onCalenderClick = (val, _eve) => {
     setCalendarDate(val);
 
     setTimeout(() => onCalendarDisplay(), 600);
 
-    setTimeDisplay(getAvailableTimeSlots(val));
+    setTimeDisplay(fetchAvailableTimeSlots(val));
   };
 
   const onTimeSelect = (e) => {
@@ -113,7 +122,7 @@ const BookingTime = ({
 
   useEffect(() => {
     updateSelectedTime("");
-    setTimeDisplay(getAvailableTimeSlots(START_DATE));
+    setTimeDisplay(fetchAvailableTimeSlots(START_DATE));
     setCalendarDate(START_DATE);
     setCalendarDisplay(false);
   }, [selectedProfile]);
@@ -184,19 +193,19 @@ const BookingTime = ({
 
           <div className="time-selector">
             {timeDisplay
-              ? timeDisplay.map((time, i) => (
+              ? timeDisplay.map(({available, slot}, i) => (
                   <button
                     key={i}
                     type="button"
                     className="time-button"
-                    aria-label={time}
+                    aria-label={slot}
                     onClick={(e) => onTimeSelect(e)}
+                    disabled={!available}
                   >
-                    {time}
+                    {slot}
                   </button>
                 ))
               : ""}
-            {/* {console.log(timeDisplay)} */}
           </div>
 
           {renderTimeResponseDisplay()}
