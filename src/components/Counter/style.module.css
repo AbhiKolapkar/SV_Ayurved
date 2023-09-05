@@ -1,0 +1,39 @@
+.counter_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-block: 2rem 3rem;
+  row-gap: 36px;
+}
+
+.counterBox {
+  flex: 25% 1 1;
+  display: grid;
+  place-items: center;
+  row-gap: 1rem;
+}
+
+.counterBox .counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--playfair);
+  font-size: 3rem;
+  margin-block: 5px;
+}
+
+.counterBox .count .plusIcon {
+  font-size: 2.625rem;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .counterBox {
+    flex: 50% 1 1;
+  }
+
+  .counterBox .counter {
+    font-size: 2rem;
+  }
+}

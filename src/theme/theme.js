@@ -90,7 +90,7 @@ theme = createTheme({
       fontStyle: "italic",
       lineHeight: "164%",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "1rem", // 20px
+        fontSize: "1.125rem", // 20px
       },
     },
     h5: {
@@ -175,5 +175,72 @@ theme = createTheme({
         },
       },
     },
+
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          height: '48px'
+        }
+      }
+    },
+
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: '1.875rem',
+          color: '#0f424d',
+          padding: 0,
+          height: '100%',
+          "& .MuiOutlinedInput-notchedOutline": {
+            border: 'none',
+          },
+          "&.Mui-focused": {
+            "& .MuiOutlinedInput-notchedOutline": {
+              border: 'none',
+            },
+          }
+        }
+      }
+    },
+
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: '#ACBD33',
+          top: '-5px',
+          backgroundColor: 'transparent',
+          "&.Mui-focused": {
+            color: '#ACBD33',
+            fontSize: '1rem',
+          }
+        },
+        shrink: {
+          left: '-1.5rem',
+          top: '-0.9rem',
+          fontSize: '1rem',
+        }
+      }
+    },
+
+    MuiAutocomplete: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+          height: '100%',
+        },
+        inputRoot: {
+          padding: 0,
+          paddingLeft: '5px',
+        },
+        option: {
+          color: '#ACBD33',
+          borderBottom: '1px solid #dfdfdf',
+        },
+        endAdornment: {
+          top: 0,
+          transform: 'translate(0, 28%)'
+        }
+      }
+    }
   },
 });

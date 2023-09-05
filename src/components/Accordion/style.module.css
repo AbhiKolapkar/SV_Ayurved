@@ -1,0 +1,46 @@
+.accordionSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionSection > div {
+  width: 95%;
+  border-bottom: 1.8px solid var(--light-green);
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  padding-block: 1rem;
+  list-style: disc;
+  color: #0f424d;
+}
+
+.quesBox {
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropDown {
+  width: 100%;
+  padding-block-end: 1rem;
+  /* max-height: 0; */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* .expand .dropDown {
+  max-height: fit-content;
+  padding-block-end: 1rem;
+} */
+
+.dropDown pre {
+  padding-inline-end: 0.75rem;
+}

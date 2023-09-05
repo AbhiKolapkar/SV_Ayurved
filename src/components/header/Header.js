@@ -3,7 +3,7 @@ import { Container, useMediaQuery } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/icons/SV_Logo.svg";
 import { DesktopMenu, MobileMenu, TabMenu } from "./NavMenu";
-import BookingBtn from "../../common/BookingBtn";
+import {BookingBtn} from "../../common/BookingBtn";
 import styles from "./style.module.css";
 
 const Header = () => {

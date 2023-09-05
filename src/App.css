@@ -1,5 +1,5 @@
 .section {
-  margin-block: var(--section-margin);
+  margin-block-end: var(--section-margin);
 }
 
 .mb {
@@ -22,5 +22,78 @@
   bottom: -50px;
   transform: translate(-50%, -50%);
   background-color: #acbd33;
+  border-radius: 1.875rem;
 }
 
+/******** floating-whatsapp CSS ********/
+.floating-whatsapp-chatbox {
+  font-family: var(--poppins);
+  bottom: 6rem;
+  right: 3rem;
+}
+
+.floating-whatsapp-button::after,
+.floating-whatsapp-chatbox header div:nth-child(1)::after {
+  display: none;
+}
+
+
+.floating-whatsapp-chatbox footer button[type="submit"] {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  background-color: transparent;
+}
+
+.floating-whatsapp-chatbox footer button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-whatsapp-chatbox footer button svg path {
+  fill: #075e54;
+}
+
+
+/******** happy-client slider CSS ********/
+.clientBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.clientBox div[class^='slick-slider'] {
+  width: 70%;
+}
+
+.clientBox div[class^='slick-slider'] .slick-slide div {
+  text-align: center;
+}
+
+
+/******** infinite scroll CSS ********/
+.infinite-scroll-component {
+  padding: 1rem 0.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+  .imgBox .name_plate {
+    padding: 8px 16px;
+    bottom: -40px;
+  }
+
+  .clientBox {
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .clientBox > div {
+    margin-bottom: 0.25rem;
+  }
+}

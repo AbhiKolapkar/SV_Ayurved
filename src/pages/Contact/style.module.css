@@ -1,0 +1,135 @@
+/* location */
+.location_map {
+  width: 100%;
+  height: 27rem;
+  border-radius: 1.875rem;
+  background: #ececec;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #cbcbcb;
+}
+
+.location_map iframe {
+  border: none;
+}
+
+/* content-box */
+.content_box {
+  height: 100%;
+  background: #fffdfd;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  padding: 1.94rem 7.13rem 2.94rem 3.56rem;
+  margin-bottom: 2.76rem;
+}
+
+.header_text {
+  position: relative;
+  border-bottom: 2px dashed rgba(172, 189, 51, 0.4);
+  margin-bottom: 0.56rem;
+  padding-inline: 8px;
+}
+
+.contact_info {
+  width: 28rem;
+  padding-block: 1.44rem 2.76rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.contact_info div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.logo_box {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* form-box */
+.form_box {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.875rem;
+  background: #eef2d6;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  padding: 2rem 4rem 6.12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form_box form {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: grid;
+  gap: 5rem;
+}
+
+.form_box form .input_fields {
+  display: grid;
+  gap: 2.75rem;
+}
+
+.form_box form button {
+  width: 100%;
+  background: linear-gradient(348deg, #869633 36%, #acbd33 100%);
+  box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 1.875rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .content_box {
+    padding-inline-start: 2rem;
+  }
+  .form_box {
+    padding-inline-end: 3.56rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content_box {
+    margin-bottom: 2rem;
+  }
+  .contact_info {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content_box {
+    padding: 1.94rem 1rem 2.94rem;
+  }
+
+  .contact_info {
+    width: 100%;
+  }
+  .contact_info div {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo_box {
+    align-items: center;
+  }
+
+  .form_box {
+    padding-inline: 1rem;
+  }
+
+  .form_box form {
+    gap: 4rem;
+  }
+}

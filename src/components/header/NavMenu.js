@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Menu, MenuItem, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import DropDown from "./DropDown";
-import BookingBtn from "../../common/BookingBtn";
+import { BookingBtn } from "../../common/BookingBtn";
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
 import { NavLinks_Data, NavRoutes_Data } from "../../data/constant";
 import styles from "./style.module.css";
@@ -96,7 +96,7 @@ export const MobileMenu = () => {
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
           onClick={handleOpenDropDown}
-          sx={{ mr: { xs: 0, sm: 4 }, display: 'grid', placeContent:'right' }}
+          sx={{ mr: { xs: 0, sm: 4 }, display: "grid", placeContent: "right" }}
         >
           <MenuIcon />
         </Box>
@@ -138,7 +138,10 @@ export const MobileMenu = () => {
             </MenuItem>
           ))}
 
-          <Box sx={{ display: { xs: "block", sm: "none" }, mt: 4 }}>
+          <Box
+            sx={{ display: { xs: "block", sm: "none" }, mt: 4 }}
+            onClick={handleCloseDropDown}
+          >
             <BookingBtn />
           </Box>
         </Menu>

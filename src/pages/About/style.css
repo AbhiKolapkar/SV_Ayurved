@@ -1,0 +1,94 @@
+.timeline {
+  max-width: 100%;
+  position: relative;
+}
+
+.timeline .container {
+  position: relative;
+  width: 50%;
+  padding: 10px 30px;
+}
+
+.timeline .container .textBox {
+  padding: 20px 15px;
+  background-color: #FFFFFF;
+  position: relative;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.textBox .title {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #0f424d;
+}
+
+.timeline .container.right {
+  left: 50%;
+}
+
+.timeline .container.left {
+  left: 0;
+}
+
+.container .id {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #869633;
+  color: #FFF;
+  display: grid;
+  place-content: center;
+  font-size: 1.125rem;
+  position: absolute;
+  right: -15px;
+  top: 45%;
+  z-index: 10;
+}
+
+.container.right .id {
+  left: -15px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background-color: #ACBD33;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  border-radius: 50%;
+  animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 5px; 
+  }
+  .timeline .container {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 0;
+  }
+  .timeline .container.right {
+    left: 0;
+  }
+
+  .container.left .id, .container.right .id {
+    left: -10px;
+  }
+}

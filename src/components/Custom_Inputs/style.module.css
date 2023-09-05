@@ -1,0 +1,72 @@
+.contactForm {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #acbd33;
+  border-radius: 1.875rem;
+  box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+.contactForm svg {
+  margin-left: 0.75rem;
+}
+
+.contactForm, .inputBox {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputBox .textbox {
+  padding: 0.875rem 0.75rem;
+  border-radius: 1.875rem;
+  border: none;
+  outline: none;
+  color: #0f424d;
+}
+
+.inputBox .label {
+  position: absolute;
+  top: 15%;
+  left: 1rem;
+  color: #acbd33;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 185%;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in;
+}
+
+.textbox:focus + .label,
+.textbox:not(:placeholder-shown).textbox:not(:focus)+ .label {
+  top: -1.5rem;
+  left: -1rem;
+  z-index: 10;
+  padding-inline: 0.5rem 0.25rem;
+  font-size: 0.75rem;
+}
+
+.textbox:focus,
+.textbox:not(:placeholder-shown).textbox:not(:focus) {
+  border-color: rgba(172, 189, 51, 0.1);
+}
+
+.textbox .label sup {
+  margin-inline: 0.44rem;
+}
+
+
+.errorMsg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  right: 0;
+  bottom: -60%;
+  transform: translate(-50%, -50%);
+  color: #e42529;
+}
+
