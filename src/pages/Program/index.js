@@ -7,6 +7,7 @@ import {
   Grid,
   TextField,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { BannerImages_Data } from "../../data/images";
@@ -29,6 +30,7 @@ import { toast } from "react-toastify";
 import { RotatingSquare } from "react-loader-spinner";
 
 const Program = () => {
+  const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { programBanner } = BannerImages_Data;
   const {
     handleSubmit,
@@ -93,11 +95,17 @@ const Program = () => {
   return (
     <>
       <section className="section">
-        <Container maxWidth="xl">
-          <div className="imgBox">
+        {!isMobile ? (
+          <Container maxWidth="xxl">
+            <div className="imgBox">
+              <img src={programBanner} alt="" loading="lazy" />
+            </div>
+          </Container>
+        ) : (
+          <div className="imgBox banner">
             <img src={programBanner} alt="" loading="lazy" />
           </div>
-        </Container>
+        )}
       </section>
 
       <section className="section">

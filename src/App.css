@@ -83,6 +83,12 @@
 
 
 @media screen and (max-width: 600px) {
+  .imgBox.banner img {
+    border-radius: 0;
+    height: 150px;
+    object-fit: fill;
+  }
+
   .imgBox .name_plate {
     padding: 8px 16px;
     bottom: -40px;

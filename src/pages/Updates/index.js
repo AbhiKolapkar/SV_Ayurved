@@ -1,18 +1,25 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
 import { BannerImages_Data } from "../../data/images";
 import { Title } from "../../components/Title/Title";
 
 const Updates = () => {
+  const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { updateBanner } = BannerImages_Data;
   return (
     <>
       <section className="section">
-        <Container maxWidth="xxl">
-          <div className="imgBox">
+        {!isMobile ? (
+          <Container maxWidth="xxl">
+            <div className="imgBox">
+              <img src={updateBanner} alt="" loading="lazy" />
+            </div>
+          </Container>
+        ) : (
+          <div className="imgBox banner">
             <img src={updateBanner} alt="" loading="lazy" />
           </div>
-        </Container>
+        )}
       </section>
 
       <section className="section">

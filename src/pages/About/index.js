@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import { QuoteBanner } from "../../components/Banners/Banners";
 import { BannerImages_Data } from "../../data/images";
 import {
@@ -15,16 +15,23 @@ import "./style.css";
 const About = () => {
   const { aboutBanner, quoteBanner } = BannerImages_Data;
   const { heroImg, name, education, introText } = FounderIntro;
+  const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
 
   return (
     <>
       {/* hero-banner */}
       <section className="section">
-        <Container maxWidth="xxl">
-          <div className="imgBox">
+        {!isMobile ? (
+          <Container maxWidth="xxl">
+            <div className="imgBox">
+              <img src={aboutBanner} alt="" loading="lazy" />
+            </div>
+          </Container>
+        ) : (
+          <div className="imgBox banner">
             <img src={aboutBanner} alt="" loading="lazy" />
           </div>
-        </Container>
+        )}
       </section>
 
       {/* founder-introduction section */}
@@ -145,9 +152,12 @@ const About = () => {
 
         <Container maxWidth="xl">
           <div className="timeline">
-            {Aarogyasutram_3Ps_Data.map(({id, title, desc}, i) => (
-              <div key={id} className={`container ${i%2===0 ? 'right' : 'left'}`}>
-                <span className="id">{i+1}</span>
+            {Aarogyasutram_3Ps_Data.map(({ id, title, desc }, i) => (
+              <div
+                key={id}
+                className={`container ${i % 2 === 0 ? "right" : "left"}`}
+              >
+                <span className="id">{i + 1}</span>
                 <div className="textBox">
                   <Typography
                     variant="h5"

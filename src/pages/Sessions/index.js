@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
 import axios from "axios";
 import { BannerImages_Data } from "../../data/images";
 import { Title } from "../../components/Title/Title";
@@ -8,6 +8,7 @@ import Fallback from "../../common/Fallback";
 import { SESSIONS_API_URL } from "../../data/constant";
 
 const Sessions = () => {
+  const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { sessionBanner } = BannerImages_Data;
   const [sessionsData, setSessionsData] = useState(null);
 
@@ -21,11 +22,17 @@ const Sessions = () => {
   return (
     <>
       <section className="section">
-        <Container maxWidth="xxl">
-          <div className="imgBox">
+        {!isMobile ? (
+          <Container maxWidth="xxl">
+            <div className="imgBox">
+              <img src={sessionBanner} alt="" loading="lazy" />
+            </div>
+          </Container>
+        ) : (
+          <div className="imgBox banner">
             <img src={sessionBanner} alt="" loading="lazy" />
           </div>
-        </Container>
+        )}
       </section>
 
       <section className="section">

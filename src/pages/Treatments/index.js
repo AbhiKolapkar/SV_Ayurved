@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
 import axios from "axios";
 import { BannerImages_Data } from "../../data/images";
 import { Title } from "../../components/Title/Title";
@@ -8,6 +8,7 @@ import Fallback from "../../common/Fallback";
 import { TREATMENTS_API_URL } from "../../data/constant";
 
 const Treatments = () => {
+  const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { treatmentBanner } = BannerImages_Data;
   const API_URL = TREATMENTS_API_URL;
   const [treatmentsData, setTreatmentsData] = useState(null);
@@ -22,11 +23,17 @@ const Treatments = () => {
   return (
     <>
       <section className="section">
-        <Container maxWidth="xxl">
-          <div className="imgBox">
+        {!isMobile ? (
+          <Container maxWidth="xxl">
+            <div className="imgBox">
+              <img src={treatmentBanner} alt="" loading="lazy" />
+            </div>
+          </Container>
+        ) : (
+          <div className="imgBox banner">
             <img src={treatmentBanner} alt="" loading="lazy" />
           </div>
-        </Container>
+        )}
       </section>
 
       <section className="section">
