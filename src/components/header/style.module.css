@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.toolbar .logo {
+  width: 225px;
+}
+
 .toolbar .menu {
   flex-grow: 1;
   display: grid;
@@ -26,6 +30,7 @@
   display: block;
   padding-block: 3px;
   position: relative;
+  width: 100%;
 }
 
 .menuItem:hover,

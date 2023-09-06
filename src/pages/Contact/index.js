@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { Title } from "../../components/Title/Title";
 import { Contacts_Data } from "../../data/constant";
-import contactLogo_img from "../../assets/images/logo-icon.png";
+import logo from "../../assets/icons/SV_Logo.svg";
 import { InputField } from "../../components/Custom_Inputs/InputField";
 import { ReactComponent as MailIcon } from "../../assets/icons/mail.svg";
 import { ReactComponent as MessageIcon } from "../../assets/icons/message.svg";
@@ -63,7 +63,7 @@ const Contact = () => {
       <section className="section">
         <Title title="Contact Us" />
 
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" className="section">
           <div className={styles.location_map}>
             {/* google-maps iframe generator */}
             <iframe
@@ -73,130 +73,132 @@ const Contact = () => {
             ></iframe>
           </div>
         </Container>
-      </section>
 
-      <Container maxWidth="xl" className="section">
-        <Grid container rowGap={4}>
-          <Grid item md={6} xs={12}>
-            <Box
-              className={styles.content_box}
-              sx={{
-                width: { xs: "100%", md: "calc(100% + 2.31rem)" },
-                borderRadius: {
-                  xs: "1.875rem",
-                  md: "1.875rem 0rem 0rem 1.875rem",
-                },
-              }}
-            >
-              <Typography
-                variant="h3"
-                color={"text.secondary"}
-                className={styles.header_text}
+        <Container maxWidth="xl" className="section">
+          <Grid container rowGap={4}>
+            <Grid item md={6} xs={12}>
+              <Box
+                className={styles.content_box}
+                sx={{
+                  width: { xs: "100%", md: "calc(100% + 2.31rem)" },
+                  borderRadius: {
+                    xs: "1.875rem",
+                    md: "1.875rem 0rem 0rem 1.875rem",
+                  },
+                }}
               >
-                Get In Touch
-              </Typography>
+                <Typography
+                  variant="h3"
+                  color={"text.secondary"}
+                  className={styles.header_text}
+                >
+                  Get In Touch
+                </Typography>
 
-              <div className={styles.contact_info}>
-                {Contacts_Data.map(({ id, bgIcon, text }) => (
-                  <div key={id}>
-                    <img src={bgIcon} alt="" />
-                    <pre>
-                      <Typography
-                        fontSize={"1.125rem"}
-                        color={"text.secondary"}
-                        fontWeight={400}
-                      >
-                        {text}
-                      </Typography>
-                    </pre>
-                  </div>
-                ))}
-              </div>
-
-              <div className={styles.logo_box}>
-                <img src={contactLogo_img} alt="" />
-              </div>
-            </Box>
-          </Grid>
-
-          <Grid item md={6} xs={12}>
-            <Box className={styles.form_box}>
-              <Typography
-                variant="h3"
-                color={"text.secondary"}
-                className={styles.header_text}
-              >
-                Have other Questions?
-              </Typography>
-
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
-                autoComplete="off"
-              >
-                <div className={styles.input_fields}>
-                  <InputField
-                    type="text"
-                    label="Full Name"
-                    name="name"
-                    register={register}
-                    icon={<ProfileIcon />}
-                    errors={errors}
-                    {...Full_Name_Validation}
-                  />
-                  <InputField
-                    type="email"
-                    label="Email ID"
-                    name="email"
-                    register={register}
-                    icon={<MailIcon />}
-                    errors={errors}
-                    {...Email_Validation}
-                  />
-                  <InputField
-                    type="tel"
-                    label="Phone Number"
-                    name="phone"
-                    register={register}
-                    icon={<PhoneIcon />}
-                    errors={errors}
-                    {...Phone_Number_Validation}
-                  />
-                  <InputField
-                    type="text"
-                    label="Message"
-                    name="message"
-                    register={register}
-                    icon={<MessageIcon />}
-                    errors={errors}
-                    {...Message_Validation}
-                  />
+                <div className={styles.contact_info}>
+                  {Contacts_Data.map(({ id, icon, text }) => (
+                    <div key={id}>
+                      <div className="imgBox">
+                        <img src={icon} alt="" />
+                      </div>
+                      <pre>
+                        <Typography
+                          fontSize={"1.125rem"}
+                          color={"text.secondary"}
+                          fontWeight={400}
+                        >
+                          {text}
+                        </Typography>
+                      </pre>
+                    </div>
+                  ))}
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className={styles.submitBtn}
+                <div className={styles.logo_box}>
+                  <img src={logo} alt="" />
+                </div>
+              </Box>
+            </Grid>
+
+            <Grid item md={6} xs={12}>
+              <Box className={styles.form_box}>
+                <Typography
+                  variant="h3"
+                  color={"text.secondary"}
+                  className={styles.header_text}
                 >
-                  {isLoading ? (
-                    <RotatingSquare
-                      width={40}
-                      height={40}
-                      color="#eef2d6"
-                      strokeWidth={2}
-                      ariaLabel="rotating-square-loading"
+                  Have other Questions?
+                </Typography>
+
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <div className={styles.input_fields}>
+                    <InputField
+                      type="text"
+                      label="Full Name"
+                      name="name"
+                      register={register}
+                      icon={<ProfileIcon />}
+                      errors={errors}
+                      {...Full_Name_Validation}
                     />
-                  ) : (
-                    <Typography variant="subtitle1" color={"text.primary"}>
-                      Send Message
-                    </Typography>
-                  )}
-                </button>
-              </form>
-            </Box>
+                    <InputField
+                      type="email"
+                      label="Email ID"
+                      name="email"
+                      register={register}
+                      icon={<MailIcon />}
+                      errors={errors}
+                      {...Email_Validation}
+                    />
+                    <InputField
+                      type="tel"
+                      label="Phone Number"
+                      name="phone"
+                      register={register}
+                      icon={<PhoneIcon />}
+                      errors={errors}
+                      {...Phone_Number_Validation}
+                    />
+                    <InputField
+                      type="text"
+                      label="Message"
+                      name="message"
+                      register={register}
+                      icon={<MessageIcon />}
+                      errors={errors}
+                      {...Message_Validation}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className={styles.submitBtn}
+                  >
+                    {isLoading ? (
+                      <RotatingSquare
+                        width={40}
+                        height={40}
+                        color="#eef2d6"
+                        strokeWidth={2}
+                        ariaLabel="rotating-square-loading"
+                      />
+                    ) : (
+                      <Typography variant="subtitle1" color={"text.primary"}>
+                        Send Message
+                      </Typography>
+                    )}
+                  </button>
+                </form>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </section>
     </>
   );
 };

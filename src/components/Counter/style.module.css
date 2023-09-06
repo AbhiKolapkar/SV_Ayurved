@@ -14,6 +14,12 @@
   row-gap: 1rem;
 }
 
+.counterBox img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
 .counterBox .counter {
   display: flex;
   align-items: center;
@@ -31,6 +37,12 @@
 @media screen and (max-width: 600px) {
   .counterBox {
     flex: 50% 1 1;
+  }
+
+  .counterBox img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
 
   .counterBox .counter {

@@ -17,13 +17,13 @@ const mediaModal = {
   top: "55%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { xs: "90%", sm: "auto" },
+  width: { xs: "95%", sm: 560 },
+  height: { xs: "auto", sm: 550 },
   bgcolor: "#FFFFFD",
   borderRadius: "1.875rem",
   overflow: "hidden",
   boxShadow:
     "5px 4px 10px 0 rgba(0, 0, 0, 0.4), -5px -4px 10px 0 rgba(0, 0, 0, 0.4)",
-  p: 0.25,
 };
 
 const Gallery = () => {

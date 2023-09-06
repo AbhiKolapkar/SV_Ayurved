@@ -7,7 +7,8 @@ import Fallback from "./common/Fallback";
 import { ToastContainer } from "react-toastify";
 
 import "./index.css";
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "./common/ScrollToTop";
 
 const App = lazy(() => import("./App"));
 
@@ -15,13 +16,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Suspense fallback={<Fallback />}>
-          <ToastContainer position="top-right" />
-          <App />
-        </Suspense>
-      </ThemeProvider>
+      <ScrollToTop>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Suspense fallback={<Fallback />}>
+            <ToastContainer />
+            <App />
+          </Suspense>
+        </ThemeProvider>
+      </ScrollToTop>
     </BrowserRouter>
   </React.StrictMode>
 );

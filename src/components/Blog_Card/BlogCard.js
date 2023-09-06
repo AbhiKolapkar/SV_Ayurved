@@ -1,18 +1,18 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import nextLine_img from "../../assets/icons/next_line.svg";
+import {ReactComponent as NextLine_img} from "../../assets/icons/next_line.svg";
 import styles from "./style.module.css";
 
 const BlogCard = (props) => {
   const { id, image, date, category, title, desc, slug } = props;
-  const Title = slug.split('/')[4]
+  const blogTitle = slug.split('/')[4]
 
   return (
     <>
       <div key={id} className={styles.blogCard}>
         <div className={`imgBox ${styles.img}`}>
-          <NavLink to={`/blog/${Title}`}>
+          <NavLink to={`/blog/${blogTitle}`}>
             <img src={image} alt="" loading="lazy" />
           </NavLink>
         </div>
@@ -33,7 +33,7 @@ const BlogCard = (props) => {
               color="text.secondary"
               className={styles.title}
             >
-              <NavLink to={`/blog/${Title}`}>{title}</NavLink>
+              <NavLink to={`/blog/${blogTitle}`}>{title}</NavLink>
             </Typography>
 
             <pre>
@@ -48,11 +48,11 @@ const BlogCard = (props) => {
           </div>
 
           <button className={styles.read_moreBtn}>
-            <NavLink to={`/blog/${Title}`}>
+            <NavLink to={`/blog/${blogTitle}`}>
               <Typography variant="button" color={"text.secondary"}>
                 Read More
               </Typography>
-              <img src={nextLine_img} alt="" />
+              <NextLine_img />
             </NavLink>
           </button>
         </div>

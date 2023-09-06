@@ -11,6 +11,11 @@
   gap: 1rem;
 }
 
+.divider_ImgBox img {
+  width: 38px;
+  height: 50px;
+}
+
 .divider_ImgBox::before, .divider_ImgBox::after {
   flex: 40% 0 0;
   content: '';

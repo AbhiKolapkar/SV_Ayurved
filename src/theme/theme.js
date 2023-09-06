@@ -67,7 +67,7 @@ theme = createTheme({
       fontStyle: "normal",
       lineHeight: "normal",
       [theme.breakpoints.down("sm")]: {
-        fontSize: "1.5rem", // 24px
+        fontSize: "1.75rem", // 28px
       },
     },
     h3: {

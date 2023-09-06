@@ -79,7 +79,7 @@
 }
 
 .popup_media img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 

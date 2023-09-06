@@ -3,11 +3,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { BLOG_DETAILS_API_URL } from "../../data/constant";
-import { Title } from "../../components/Title/Title";
 import styles from "./style.module.css";
+import { Title } from "../../components/Title/Title";
 
 const BlogDetails = () => {
-  const { Title } = useParams();
+  const { blogTitle } = useParams();
   const [blogData, setBlogData] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const BlogDetails = () => {
     const fetchBlogDetails = async () => {
       try {
         const response = await axios.get(
-          `${BLOG_DETAILS_API_URL}/${Title}`
+          `${BLOG_DETAILS_API_URL}/${blogTitle}`
         );
         setBlogData(response.data);
       } catch (error) {
@@ -23,7 +23,7 @@ const BlogDetails = () => {
       }
     };
     fetchBlogDetails();
-  }, [Title]);
+  }, [blogTitle]);
 
   const { id, image, title, content, category, date } = blogData;
 

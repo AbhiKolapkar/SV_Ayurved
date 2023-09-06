@@ -1,12 +1,17 @@
-import React from 'react'
-import { Container, Typography } from '@mui/material'
-import { NavLink } from 'react-router-dom'
-import { Contacts_Data, ExtraLinks_Data, NavLinks_Data, SocialLinks_Data } from '../../data/constant'
-import styles from './style.module.css'
-import logo from '../../assets/icons/SV_Logo.svg'
+import React from "react";
+import { Container, Typography } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import {
+  Contacts_Data,
+  ExtraLinks_Data,
+  NavLinks_Data,
+  SocialLinks_Data,
+} from "../../data/constant";
+import styles from "./style.module.css";
+import logo from "../../assets/icons/SV_Logo.svg";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -15,7 +20,7 @@ const Footer = () => {
           <Container maxWidth="xxl">
             <div className={styles.grid_container}>
               <div className={styles.grid_item}>
-                <img src={logo} alt="" width={225} />
+                <img src={logo} alt="" className={styles.logo} />
 
                 <Typography variant="body2" color={"text.secondary"}>
                   Planning to create healthier world around us.
@@ -25,7 +30,7 @@ const Footer = () => {
                   {SocialLinks_Data.map(({ id, platform, path }) => (
                     <li key={id}>
                       <a href={path}>
-                        <img src={platform} alt={platform} loading='lazy' />
+                        <img src={platform} alt={platform} loading="lazy" />
                       </a>
                     </li>
                   ))}
@@ -98,7 +103,9 @@ const Footer = () => {
                 <ul className={styles.contact_data}>
                   {Contacts_Data.map(({ id, icon, text }) => (
                     <li key={id}>
-                      <img src={icon} alt="" />
+                      <div className="imgBox">
+                        <img src={icon} alt="" />
+                      </div>
                       <pre>
                         <Typography variant="body2" color={"text.secondary"}>
                           {text}
@@ -142,7 +149,7 @@ const Footer = () => {
         </Container>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -31,7 +31,7 @@ const Header = () => {
           <div className={styles.toolbar}>
             <div className="imgBox">
               <NavLink to="/">
-                <img src={logo} alt="logo" width={200} />
+                <img src={logo} alt="logo" className={styles.logo} />
               </NavLink>
             </div>
 

@@ -27,7 +27,7 @@
 }
 
 .form_box form .input_fields {
-  width: 80%;
+  width: 100%;
   display: grid;
   gap: 2.75rem;
 }
@@ -49,6 +49,18 @@
 
 .form_box .input_fields .autocomplete_field .autocomplete {
   width: 100%;
+}
+
+.autocomplete_field .errorMsg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  right: -10%;
+  bottom: -90%;
+  transform: translate(-50%, -50%);
+  color: #e42529;
+  font-size: 16px;
 }
 
 .btn {
@@ -128,6 +140,10 @@
 
   .form_box form .input_fields {
     width: 100%;
+  }
+
+  .autocomplete_field .errorMsg {
+    right: -17%;
   }
 
   .content_box {

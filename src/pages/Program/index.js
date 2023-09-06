@@ -10,6 +10,9 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { RotatingSquare } from "react-loader-spinner";
+import { Error } from "@mui/icons-material";
 import { BannerImages_Data } from "../../data/images";
 import { Title } from "../../components/Title/Title";
 import { InputField } from "../../components/Custom_Inputs/InputField";
@@ -26,8 +29,6 @@ import { ReactComponent as PhoneIcon } from "../../assets/icons/phone.svg";
 import { ReactComponent as ProfileIcon } from "../../assets/icons/profile.svg";
 import { PROGRAMS_API_URL } from "../../data/constant";
 import styles from "./style.module.css";
-import { toast } from "react-toastify";
-import { RotatingSquare } from "react-loader-spinner";
 
 const Program = () => {
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
@@ -68,13 +69,13 @@ const Program = () => {
 
       const response = await axios.post(PROGRAMS_API_URL, formData);
       toast.success(response.data.message, {
-        position: "bottom-center",
+        position: "top-right",
         autoClose: 3000,
         closeOnClick: true,
       });
     } catch (error) {
       toast.error(error, {
-        position: "bottom-center",
+        position: "top-right",
         autoClose: 3000,
         closeOnClick: true,
       });
@@ -159,6 +160,7 @@ const Program = () => {
                       errors={errors}
                       {...Full_Name_Validation}
                     />
+                    
                     <InputField
                       type="email"
                       label="Email ID"
@@ -168,6 +170,7 @@ const Program = () => {
                       errors={errors}
                       {...Email_Validation}
                     />
+
                     <InputField
                       type="tel"
                       label="Phone Number"
@@ -205,6 +208,12 @@ const Program = () => {
                           )}
                         />
                       </div>
+                      {errors.country && (
+                        <p className={styles.errorMsg}>
+                          {" "}
+                          <Error /> {errors.country.message}
+                        </p>
+                      )}
                     </div>
 
                     <InputField

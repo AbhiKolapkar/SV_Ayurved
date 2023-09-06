@@ -152,18 +152,19 @@ const About = () => {
 
         <Container maxWidth="xl">
           <div className="timeline">
-            {Aarogyasutram_3Ps_Data.map(({ id, title, desc }, i) => (
+            {Aarogyasutram_3Ps_Data.map(({ id, image, title, desc }, i) => (
               <div
                 key={id}
                 className={`container ${i % 2 === 0 ? "right" : "left"}`}
               >
-                <span className="id">{i + 1}</span>
+                <img src={image} alt="" className="id" />7
                 <div className="textBox">
                   <Typography
                     variant="h5"
                     color="text.secondary"
                     className="title"
                   >
+                    {i+1}{") "}
                     {title}
                   </Typography>
                   <pre>

@@ -18,6 +18,10 @@
   padding-inline: 0.5rem;
 }
 
+.grid_item .logo {
+  width: 225px;
+}
+
 .links_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -69,6 +73,8 @@
 }
 
 .grid_item .contact_data li img {
+  width: 30px;
+  height: 30px;
   margin-top: 3px;
 }
 

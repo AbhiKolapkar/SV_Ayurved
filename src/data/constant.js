@@ -67,13 +67,14 @@ export const PATHS = {
   GALLERY_PAGE: "/gallery",
   PROGRAM_PAGE: "/program",
   BLOGS_PAGE: "/blogs",
-  BLOG_DETAILS_PAGE: "/blog/:Title",
+  BLOG_DETAILS_PAGE: "/blog/:blogTitle",
   UPDATES_PAGE: "/updates",
   CONTACT_PAGE: "/contact",
   PRIVACY_POLICY_PAGE: "/privacy",
   TERMS_CONDITIONS_PAGE: "/terms",
 };
 
+/************ navigation-menu Data ************/
 export const NavLinks_Data = [
   {
     path: PATHS.HOME_PATH || PATHS.HOME_PAGE,
@@ -109,7 +110,7 @@ export const NavLinks_Data = [
   },
 ];
 
-/*********************** dropdown navigation-menu Data ***********************/
+/************ dropdown navigation-menu Data ************/
 export const NavRoutes_Data = [
   {
     path: PATHS.HOME_PATH || PATHS.HOME_PAGE,
@@ -152,7 +153,7 @@ export const NavRoutes_Data = [
   },
 ];
 
-/*********************** miscellaneous-links Data ***********************/
+/************ miscellaneous-links Data ************/
 export const ExtraLinks_Data = [
   {
     path: PATHS.PRIVACY_POLICY_PAGE,
@@ -168,7 +169,7 @@ export const ExtraLinks_Data = [
   },
 ];
 
-/*********************** social-links Data ***********************/
+/************ social-links Data ************/
 export const SocialLinks_Data = [
   {
     id: 1,
@@ -192,7 +193,7 @@ export const SocialLinks_Data = [
   },
 ];
 
-/*********************** contacts Data ***********************/
+/************ contacts Data ************/
 export const Contacts_Data = [
   {
     id: 1,
@@ -215,7 +216,6 @@ Pune- 411 028`,
   },
 ];
 
-/*********************** home page Data ***********************/
 /************ hero-banner content Data ************/
 export const Hero_Banner_Data = [
   {
@@ -273,7 +273,7 @@ export const Counter_Data = [
   {
     id: 2,
     icon: hearttick,
-    count: 8000,
+    count: 8127,
     text: "Satisfied Patients",
   },
   {
@@ -370,13 +370,12 @@ export const Faqs_Data = [
   },
 ];
 
-/*********************** about-us page Data ***********************/
 /************ Founder Introduction Data ************/
 export const FounderIntro = {
   heroImg: founder,
   name: "Dr. Jyoti Shinde",
-  education: `BAMS.MD [kaychikitsa]dcc.dct.dcl. Ayurved Vachaspati,
-Panchakarma Visharad Reg.no.- I-67370-A`,
+  education: `BAMS.MD [kaychikitsa]DCC.DCT.DCL. 
+Ayurved Vachaspati, Panchakarma Visharad Reg.no.- I-67370-A`,
   introText: `Meet the visionary behind SVayurved - Dr. Jyoti Shinde. With a proud Indian heritage deeply rooted in Maharashtrian culture, Dr. Jyoti brings over 10+ years of experience as an Ayurvedic Vaidya who treats a range of medical issues.
   
 She embraces the core Ayurvedic principle that every patient is distinct and deserving of individualized care [purusham purusham veekshya]. Dr. Jyoti is a well-respected Ayurvedic physician as well as a recognized gynecologist, infertiologist, dermatologist, and cosmetologist. She is driven by her enthusiasm for offering holistic treatments.
@@ -543,6 +542,7 @@ export const Media_Data = [
   { id: 15, type: "image", url: img9 },
 ];
 
+/* **** *** happy clients data *** **** */
 export const Happy_Clients_Data = {
   category: "Gharbhasanskar",
   clients: [

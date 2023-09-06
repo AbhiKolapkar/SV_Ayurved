@@ -41,7 +41,7 @@ const CardSlider = ({ cardData, Component, slides }) => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    // speed: 800,
+    speed: 500,
     cssEase: "linear",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
