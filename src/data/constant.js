@@ -236,9 +236,7 @@ towards holistic wellness.`,
   {
     id: 2,
     bannerImg: heroBanner2,
-    title: `Explore the Ayurveda's Richness: 
-Enroll in Our Comprehensive 
-Training Program`,
+    title: `Explore the Ayurveda's \nRichness: Enroll in Our \nComprehensive Training Program`,
     contentText: `Join our Ayurvedic Training Course and immerse 
 yourself in the depth of timeless knowledge. 
 Empower yourself with the holistic principles that guide well-being.`,
@@ -249,9 +247,7 @@ Empower yourself with the holistic principles that guide well-being.`,
   {
     id: 3,
     bannerImg: heroBanner3,
-    title: `Rediscover Balance and 
-Harmony with Our Array 
-of Ayurvedic Treatments`,
+    title: `Rediscover Balance and \nHarmony with Our Array of \nAyurvedic Treatments`,
     contentText: `Experience the profound impact of Ayurvedic 
 treatments at SV Ayurved. Our therapies restore 
 equilibrium in body, mind, and spirit, nurturing 

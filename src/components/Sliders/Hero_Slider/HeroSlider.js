@@ -32,8 +32,7 @@ const HeroSlider = () => {
             return (
               <div className="banner_wrapper" key={id}>
                 <div
-                  data-bg={bannerImg}
-                  className="hero-img lazyload"
+                  className="hero-img"
                   style={{ backgroundImage: `url(${bannerImg})` }}
                 >
                   <Box className="imgData">
@@ -45,7 +44,7 @@ const HeroSlider = () => {
                           </Typography>
                         </pre>
                       </div>
-                      <div className="descText">
+                      <Box className="descText">
                         <pre>
                           <Typography
                             variant="body1"
@@ -55,7 +54,7 @@ const HeroSlider = () => {
                             {contentText}
                           </Typography>
                         </pre>
-                      </div>
+                      </Box>
                     </Box>
 
                     <Box mt={0} width={'max-content'}>
@@ -77,7 +76,7 @@ const HeroSlider = () => {
               </div>
             );
           }
-        )}
+          )}
       </Slider>
     </>
   );

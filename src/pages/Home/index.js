@@ -227,8 +227,8 @@ const Home = () => {
       <section className="section">
         <Title title={"What Our Customers Say"} />
 
-        <Container maxWidth="xxl" disableGutters>
-          {!isMobile ? (
+        {!isMobile ? (
+          <Container maxWidth="xxl">
             <Container maxWidth="xl">
               <CardSlider
                 cardData={Review_Data}
@@ -236,14 +236,16 @@ const Home = () => {
                 slides={3}
               />
             </Container>
-          ) : (
+          </Container>
+        ) : (
+          <Container maxWidth='xxl' disableGutters>
             <CardSlider
               cardData={Review_Data}
               Component={ReviewCard}
               slides={3}
             />
-          )}
-        </Container>
+          </Container>
+        )}
       </section>
 
       {/* faqs section */}

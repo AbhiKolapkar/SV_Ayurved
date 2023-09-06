@@ -57,7 +57,7 @@
 .banner_wrapper .imgData {
   width: 100%;
   position: absolute;
-  top: 15%;
+  top: 10%;
   bottom: 10%;
   left: 6%;
   right: 5%;
@@ -103,6 +103,7 @@
 
   .hero-img {
     border-radius: 0;
+    background-size: cover;
   }
 
   .hero_dots {
@@ -110,13 +111,13 @@
   }
 
   .banner_wrapper .imgData {
-    top: 10%;
+    top: 0%;
     left: 4%;
   }
 }
 
 @media screen and (max-width: 400px) {
   .contentBox .imgTitle h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
