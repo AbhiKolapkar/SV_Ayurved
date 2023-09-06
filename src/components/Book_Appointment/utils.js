@@ -1,6 +1,6 @@
+import axios from "axios";
 import { DateTime } from "luxon";
 import { listOfDays, listOfMonths } from "./data";
-import axios from "axios";
 import { BOOKED_APPOINTMENT_API_URL } from "../../data/constant";
 
 export const addMonthsToDate = (date, numOfMonth) => {

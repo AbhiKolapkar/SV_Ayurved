@@ -76,14 +76,14 @@ const BookingTime = ({
     return availableWorkingSlots;
   };
 
-  const fetchAvailableTimeSlots = (date) => {
-    const totalWorkingTimeSlots = getWorkingTimeSlots(date);
+  const fetchAvailableTimeSlots = () => {
+    const totalWorkingTimeSlots = getWorkingTimeSlots(calendarDate);
 
-    const selectedDateString = date.toDateString();
+    const selectedDateString = normaliseDateToReadableString(calendarDate);
 
     const bookedTimeSlots = bookedAppointments
       .filter(
-        (appointment) => appointment.date.toDateString() === selectedDateString
+        (appointment) => normaliseDateToReadableString(appointment.date) === selectedDateString
       )
       .map((appointment) => appointment.timeSlot);
 
@@ -98,9 +98,7 @@ const BookingTime = ({
   const onCalenderClick = (val, _eve) => {
     setCalendarDate(val);
 
-    setTimeout(() => onCalendarDisplay(), 600);
-
-    setTimeDisplay(fetchAvailableTimeSlots(val));
+    setTimeout(() => onCalendarDisplay(), 600)
   };
 
   const onTimeSelect = (e) => {
@@ -122,10 +120,9 @@ const BookingTime = ({
 
   useEffect(() => {
     updateSelectedTime("");
-    setTimeDisplay(fetchAvailableTimeSlots(START_DATE));
-    setCalendarDate(START_DATE);
+    setTimeDisplay(fetchAvailableTimeSlots());
     setCalendarDisplay(false);
-  }, [selectedProfile]);
+  }, [calendarDate, bookedAppointments]);
 
   const renderTimeResponseDisplay = () => {
     if (selectedTime) {
