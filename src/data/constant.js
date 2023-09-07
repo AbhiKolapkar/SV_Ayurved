@@ -220,7 +220,7 @@ Pune- 411 028`,
 export const Hero_Banner_Data = [
   {
     id: 1,
-    bannerImg: heroBanner4,
+    bannerImg: heroBanner1,
     title: `Reveal the Essence of 
 SV Ayurved: Where 
 Healing Becomes Life`,
@@ -230,21 +230,23 @@ care, leading you on a profound transformation
 towards holistic wellness.`,
     btnText: "About Us",
     path: "/about",
+    color: '#FFFFFF',
   },
 
   {
     id: 2,
-    bannerImg: heroBanner4,
+    bannerImg: heroBanner2,
     title: `Explore the Ayurveda's \nRichness: Enroll in Our \nComprehensive \nTraining Program`,
     contentText: `Join our Ayurvedic Training Course and immerse 
 yourself in the depth of timeless knowledge. 
 Empower yourself with the holistic principles \nthat guide well-being.`,
     btnText: "Explore Program",
     path: "/program",
+    color: '#ACBD33',
   },
   {
     id: 3,
-    bannerImg: heroBanner4,
+    bannerImg: heroBanner3,
     title: `Rediscover Balance and \nHarmony with Our Array of \nAyurvedic Treatments`,
     contentText: `Experience the profound impact of Ayurvedic 
 treatments at SV Ayurved. Our therapies restore 
@@ -252,6 +254,7 @@ equilibrium in body, mind, and spirit, nurturing
 your overall wellness.`,
     btnText: "Know More",
     path: "/treatments",
+    color: '#FFFFFF',
   },
 ];
 

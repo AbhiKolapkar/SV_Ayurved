@@ -8,7 +8,6 @@ import {ReactComponent as RightUpArrow} from '../../../assets/icons/right_up_arr
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
-import { Diversity2Sharp } from "@mui/icons-material";
 
 const HeroSlider = () => {
   const settings = {
@@ -28,7 +27,7 @@ const HeroSlider = () => {
     <>
       <Slider {...settings} className="hero-slider">
         {Hero_Banner_Data.map(
-          ({ id, bannerImg, title, contentText, btnText, path }) => {
+          ({ id, bannerImg, title, contentText, btnText, path, color }) => {
             return (
               <div className="banner_wrapper" key={id}>
                 <div
@@ -39,7 +38,7 @@ const HeroSlider = () => {
                     <Box className="contentBox">
                       <div className="imgTitle">
                         <pre>
-                          <Typography variant="h1" color='text.primary'>
+                          <Typography variant="h1" color={color}>
                             {title}
                           </Typography>
                         </pre>
@@ -48,7 +47,7 @@ const HeroSlider = () => {
                         <pre>
                           <Typography
                             variant="body1"
-                            color='text.primary'
+                            color={color}
                             fontSize={{ xs: "0.75rem", sm: "1rem" }}
                           >
                             {contentText}

@@ -76,7 +76,7 @@
 
 .contentBox .imgTitle, .contentBox .descText {
   color: #acbd33;
-  text-shadow: -1px 1px 0px rgba(87,87,87,0.8);
+  text-shadow: 0px 1px 0px rgba(87,87,87,0.8);
 }
 
 .imgData .img_btn {

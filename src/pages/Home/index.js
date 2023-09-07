@@ -46,7 +46,13 @@ const Home = () => {
     <>
       {/* hero_banner */}
       <section className="section">
-        <HeroBanner />
+        {!isMobile ? (
+          <Container maxWidth="xxl">
+            <HeroSlider />
+          </Container>
+        ) : (
+          <HeroBanner />
+        )}
       </section>
 
       {/* about SV Ayurved Section */}
@@ -73,7 +79,6 @@ const Home = () => {
                 <Box mb={-2.5} mt={-1}>
                   <Title
                     title="About SV Ayurved"
-                    // variant="h1"
                     align={{ xs: "center", md: "start" }}
                   />
                 </Box>
