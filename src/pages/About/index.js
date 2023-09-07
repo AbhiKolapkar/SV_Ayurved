@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
+import useDocTitle from "../../hooks/useDocTitle";
 import { QuoteBanner } from "../../components/Banners/Banners";
 import { BannerImages_Data } from "../../data/images";
 import {
@@ -13,6 +14,7 @@ import CardSlider from "../../components/Sliders/Card_Slider/CardSlider";
 import "./style.css";
 
 const About = () => {
+  useDocTitle('About US')
   const { aboutBanner, quoteBanner } = BannerImages_Data;
   const { heroImg, name, education, introText } = FounderIntro;
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
@@ -29,7 +31,7 @@ const About = () => {
           </Container>
         ) : (
           <div className="imgBox banner">
-            <img src={aboutBanner} alt="" loading="lazy" />
+            <img src={aboutBanner} alt="" loading="lazy"  />
           </div>
         )}
       </section>

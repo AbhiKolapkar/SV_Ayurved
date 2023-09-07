@@ -81,6 +81,7 @@
   font-weight: 500;
   color: #a8771a;
   line-height: normal;
+  cursor: pointer;
 }
 
 .bs-header .calendar-btn {

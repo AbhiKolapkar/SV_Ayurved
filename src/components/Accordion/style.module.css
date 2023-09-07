@@ -31,15 +31,8 @@
 .dropDown {
   width: 100%;
   padding-block-end: 1rem;
-  /* max-height: 0; */
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
 }
-
-/* .expand .dropDown {
-  max-height: fit-content;
-  padding-block-end: 1rem;
-} */
 
 .dropDown pre {
   padding-inline-end: 0.75rem;

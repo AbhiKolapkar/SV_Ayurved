@@ -28,7 +28,7 @@ const HeroSlider = () => {
     <>
       <Slider {...settings} className="hero-slider">
         {Hero_Banner_Data.map(
-          ({ id, bannerImg, title, contentText, btnText, path, color }) => {
+          ({ id, bannerImg, title, contentText, btnText, path }) => {
             return (
               <div className="banner_wrapper" key={id}>
                 <div
@@ -39,7 +39,7 @@ const HeroSlider = () => {
                     <Box className="contentBox">
                       <div className="imgTitle">
                         <pre>
-                          <Typography variant="h1" color={`text.${color}`}>
+                          <Typography variant="h1" color='text.primary'>
                             {title}
                           </Typography>
                         </pre>
@@ -48,7 +48,7 @@ const HeroSlider = () => {
                         <pre>
                           <Typography
                             variant="body1"
-                            color={`text.${color}`}
+                            color='text.primary'
                             fontSize={{ xs: "0.75rem", sm: "1rem" }}
                           >
                             {contentText}

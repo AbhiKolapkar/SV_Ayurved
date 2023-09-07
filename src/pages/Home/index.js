@@ -17,8 +17,11 @@ import Card from "../../components/Card/Card";
 import Counter from "../../components/Counter/Counter";
 import { TREATMENTS_API_URL } from "../../data/constant";
 import styles from "./style.module.css";
+import useDocTitle from "../../hooks/useDocTitle";
+import HeroBanner from "../../components/Sliders/Hero_Banner/HeroBanner";
 
 const Home = () => {
+  useDocTitle("Home");
   const { quoteBanner, ctaBanner } = BannerImages_Data;
   const { founder1, founder2 } = Home_Page_Images;
   const [data, setData] = useState([]);
@@ -41,15 +44,9 @@ const Home = () => {
 
   return (
     <>
-      {/* hero-banner slider */}
+      {/* hero_banner */}
       <section className="section">
-        {!isMobile ? (
-          <Container maxWidth="xxl">
-            <HeroSlider />
-          </Container>
-        ) : (
-          <HeroSlider />
-        )}
+        <HeroBanner />
       </section>
 
       {/* about SV Ayurved Section */}
@@ -76,7 +73,7 @@ const Home = () => {
                 <Box mb={-2.5} mt={-1}>
                   <Title
                     title="About SV Ayurved"
-                    variant="h1"
+                    // variant="h1"
                     align={{ xs: "center", md: "start" }}
                   />
                 </Box>
@@ -84,6 +81,7 @@ const Home = () => {
                   We are SV Ayurved formerly known as “Shree Vishwa Vajra
                   Ayurved”, Founded by Dr. Jyoti Shinde on 11 June 2016 in Pune,
                   MH, India. <br />
+                  <br />
                   Followers of “NATH PARAMPARA” which is the legacy of a
                   succession of “PASAYDANAM” started by “SHREE DNYANESHWAR
                   MAULI”.
@@ -128,6 +126,8 @@ const Home = () => {
                   Vaidya who treats a range of medical issues. She embraces the
                   core Ayurvedic principle that every patient is distinct and
                   deserving of individualized care [purusham purusham veekshya].
+                  <br />
+                  <br />
                   Dr. Jyoti is a well-respected Ayurvedic physician as well as a
                   recognized gynecologist, infertiologist, dermatologist, and
                   cosmetologist. She is driven by her enthusiasm to offer
@@ -238,7 +238,7 @@ const Home = () => {
             </Container>
           </Container>
         ) : (
-          <Container maxWidth='xxl' disableGutters>
+          <Container maxWidth="xxl" disableGutters>
             <CardSlider
               cardData={Review_Data}
               Component={ReviewCard}

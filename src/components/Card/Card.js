@@ -11,8 +11,8 @@ const Card = (props) => {
   return (
     <>
       <div className={styles.card}>
-        <div className={`imgBox ${styles.img}`}>
-          <img src={image} alt="" loading="lazy" width={352} />
+        <div className={`${styles.img}`}>
+          <img src={image} alt="" loading="lazy" />
         </div>
 
         <div className={styles.contentBox}>

@@ -6,8 +6,10 @@ import { Title } from "../../components/Title/Title";
 import Tabs from "../../components/Tabs/Tabs";
 import Fallback from "../../common/Fallback";
 import { TREATMENTS_API_URL } from "../../data/constant";
+import useDocTitle from "../../hooks/useDocTitle";
 
 const Treatments = () => {
+  useDocTitle('Treatments')
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { treatmentBanner } = BannerImages_Data;
   const [treatmentsData, setTreatmentsData] = useState(null);

@@ -1,42 +1,29 @@
 import React, { useState, useEffect } from "react";
-import {
-  Backdrop,
-  Box,
-  Container,
-  Fade,
-  Modal,
-  Typography,
-} from "@mui/material";
-import VideoPlayer from "../../components/Video_Player/VideoPlayer";
-import CardSlider from "../../components/Sliders/Card_Slider/CardSlider";
+import { Container, Typography } from "@mui/material";
 import { Media_Data } from "../../data/constant";
+import useDocTitle from "../../hooks/useDocTitle";
+import VideoPopupPlayer from "../../components/Video_Player/VideoPopupPlayer";
+import Popup from "../../components/Video_Player/Popup";
 import styles from "./style.module.css";
 
-const mediaModal = {
-  position: "absolute",
-  top: "55%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: { xs: "95%", sm: 560 },
-  height: { xs: "auto", sm: 550 },
-  bgcolor: "#FFFFFD",
-  borderRadius: "1.875rem",
-  overflow: "hidden",
-  boxShadow:
-    "5px 4px 10px 0 rgba(0, 0, 0, 0.4), -5px -4px 10px 0 rgba(0, 0, 0, 0.4)",
-};
-
 const Gallery = () => {
+  useDocTitle("Gallery");
   const videos_data = Media_Data.filter((item) => item.type === "video");
   const images_data = Media_Data.filter((item) => item.type === "image");
 
   const [items, setItems] = useState([]);
   const [slice, setSlice] = useState(8);
   const [file, setFile] = useState({});
+  const [popupVisible, setPopupVisible] = useState(false);
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(!open);
-  const handleClose = () => setOpen(false);
+  const openPopup = (file) => {
+    setPopupVisible(true);
+    setFile(file);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+  };
 
   // functionality for load more data
   useEffect(() => {
@@ -56,7 +43,7 @@ const Gallery = () => {
 
   return (
     <>
-    {/* videos gallery slider */}
+      {/* videos gallery slider */}
       <section>
         <Container maxWidth="lg">
           <div className={styles.videos_container}>
@@ -70,16 +57,12 @@ const Gallery = () => {
               Videos
             </Typography>
 
-            <CardSlider
-              cardData={videos_data}
-              Component={VideoPlayer}
-              slides={4}
-            />
+            <VideoPopupPlayer data={videos_data} />
           </div>
         </Container>
       </section>
 
-    {/* images gallery */}
+      {/* images gallery */}
       <section className="section">
         <Container maxWidth="lg">
           <div className={styles.imgGallery_container}>
@@ -97,11 +80,11 @@ const Gallery = () => {
               <div className={`section ${styles.images}`}>
                 {items.map((file) =>
                   file.url ? (
-                    <span key={file.id} onClick={handleOpen}>
+                    <span key={file.id}>
                       <img
                         src={file.url}
                         alt=""
-                        onClick={() => setFile(file)}
+                        onClick={() => openPopup(file)}
                       />
                     </span>
                   ) : null
@@ -121,7 +104,7 @@ const Gallery = () => {
           </div>
 
           {/* ***** onClick open image popup modal ***** */}
-          <Modal
+          {/* <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="transition-modal-title"
@@ -142,7 +125,11 @@ const Gallery = () => {
                 </div>
               </Box>
             </Fade>
-          </Modal>
+          </Modal> */}
+
+          {popupVisible && (
+            <Popup closePopup={closePopup} imageURL={file.url && file.url} />
+          )}
         </Container>
       </section>
     </>

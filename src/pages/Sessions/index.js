@@ -6,8 +6,10 @@ import { Title } from "../../components/Title/Title";
 import Tabs from "../../components/Tabs/Tabs";
 import Fallback from "../../common/Fallback";
 import { SESSIONS_API_URL } from "../../data/constant";
+import useDocTitle from "../../hooks/useDocTitle";
 
 const Sessions = () => {
+  useDocTitle('Sessions')
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { sessionBanner } = BannerImages_Data;
   const [sessionsData, setSessionsData] = useState(null);

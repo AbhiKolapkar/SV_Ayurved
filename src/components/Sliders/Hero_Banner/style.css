@@ -1,0 +1,105 @@
+.banner-wrapper {
+  width: 95%;
+  margin: auto;
+  height: 35rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.875rem;
+  background-image: url("../../../assets/banners/Hero_Banner_4.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content {
+  height: 100%;
+  padding: 10% 5% 10% 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 2.5rem;
+  animation: slide-in 3s ease;
+}
+
+.content.slide-out {
+  animation: slide-out 3s ease;
+}
+
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.content .img_btn {
+  min-width: 160px;
+  padding: 6px 24px;
+  background-color: #acbd33;
+  border-radius: 1.875rem;
+  box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+@media screen and (max-width: 1000px) {
+  .banner-wrapper {
+    height: 27rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .banner-wrapper {
+    width: 100%;
+    height: 23rem;
+  }
+
+  .bg_img {
+    border-radius: 0;
+  }
+
+  .content {
+    padding: 0% 5% 10% 4%;
+    gap: 1rem;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-out {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}

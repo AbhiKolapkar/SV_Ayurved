@@ -2,6 +2,7 @@
 import hero_banner1 from "../assets/banners/Hero_Banner_1.jpg";
 import hero_banner2 from "../assets/banners/Hero_Banner_2.jpg";
 import hero_banner3 from "../assets/banners/Hero_Banner_3.jpg";
+import hero_banner4 from "../assets/banners/Hero_Banner_4.jpg";
 import about_banner from "../assets/banners/about_us_banner.jpg";
 import treatment_banner from "../assets/banners/treatment_banner.png";
 import session_banner from "../assets/banners/session_banner.png";
@@ -64,6 +65,7 @@ export const BannerImages_Data = {
   heroBanner1: hero_banner1,
   heroBanner2: hero_banner2,
   heroBanner3: hero_banner3,
+  heroBanner4: hero_banner4,
   aboutBanner: about_banner,
   treatmentBanner: treatment_banner,
   sessionBanner: session_banner,

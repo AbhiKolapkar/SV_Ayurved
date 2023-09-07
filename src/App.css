@@ -6,7 +6,8 @@
   margin-bottom: var(--inline-margin);
 }
 
-.imgBox, .imgBox a {
+.imgBox,
+.imgBox a {
   display: grid;
   place-content: center;
   position: relative;
@@ -26,6 +27,10 @@
 }
 
 /******** floating-whatsapp CSS ********/
+.floating-whatsapp-button {
+  bottom: 2.5rem;
+}
+
 .floating-whatsapp-chatbox {
   font-family: var(--poppins);
   bottom: 6rem;
@@ -36,7 +41,6 @@
 .floating-whatsapp-chatbox header div:nth-child(1)::after {
   display: none;
 }
-
 
 .floating-whatsapp-chatbox footer button[type="submit"] {
   width: 35px;
@@ -56,7 +60,6 @@
   fill: #075e54;
 }
 
-
 /******** happy-client slider CSS ********/
 .clientBox {
   width: 100%;
@@ -67,14 +70,13 @@
   margin-bottom: 2rem;
 }
 
-.clientBox div[class^='slick-slider'] {
+.clientBox div[class^="slick-slider"] {
   width: 70%;
 }
 
-.clientBox div[class^='slick-slider'] .slick-slide div {
+.clientBox div[class^="slick-slider"] .slick-slide div {
   text-align: center;
 }
-
 
 /******** infinite scroll CSS ********/
 .infinite-scroll-component {
@@ -86,7 +88,8 @@
   .imgBox.banner img {
     border-radius: 0;
     height: 150px;
-    object-fit: fill;
+    object-fit: cover;
+    object-position: 85% 50%;
   }
 
   .imgBox .name_plate {
@@ -101,5 +104,9 @@
 
   .clientBox > div {
     margin-bottom: 0.25rem;
+  }
+
+  .floating-whatsapp-button {
+    right: 0.5rem;
   }
 }

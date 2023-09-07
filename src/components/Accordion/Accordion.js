@@ -28,7 +28,7 @@ const Accordion = ({ accordionData, bgColor }) => {
           <div className={styles.accordionSection}>
             {accordionData.map(({ id, question, answer }, index) => (
               <div key={id}>
-                <ul className={`${styles.wrap} ${isExpand ? styles.expand : ''}`}>
+                <ul className={styles.wrap}>
                   <li
                     className={styles.quesBox}
                     onClick={() => toggle(id)}
@@ -50,7 +50,7 @@ const Accordion = ({ accordionData, bgColor }) => {
                   </span>
                 </ul>
                 {clicked === id ? (
-                  <div className={styles.dropDown}>
+                  <div className={clicked && `${styles.dropDown}`}>
                     <pre>
                       <Typography variant="body2" color="text.quaternary">
                         {answer}

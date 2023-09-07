@@ -20,7 +20,7 @@ import mail_bg from "../assets/icons/mail_bg.svg";
 import phone from "../assets/icons/phone.svg";
 import phone_bg from "../assets/icons/phone_bg.svg";
 
-const { heroBanner1, heroBanner2, heroBanner3 } = BannerImages_Data;
+const { heroBanner1, heroBanner2, heroBanner3, heroBanner4 } = BannerImages_Data;
 const { hearttick, experience, teams, health } = Home_Page_Images;
 
 const {
@@ -220,7 +220,7 @@ Pune- 411 028`,
 export const Hero_Banner_Data = [
   {
     id: 1,
-    bannerImg: heroBanner1,
+    bannerImg: heroBanner4,
     title: `Reveal the Essence of 
 SV Ayurved: Where 
 Healing Becomes Life`,
@@ -230,23 +230,21 @@ care, leading you on a profound transformation
 towards holistic wellness.`,
     btnText: "About Us",
     path: "/about",
-    color: 'primary',
   },
 
   {
     id: 2,
-    bannerImg: heroBanner2,
-    title: `Explore the Ayurveda's \nRichness: Enroll in Our \nComprehensive Training Program`,
+    bannerImg: heroBanner4,
+    title: `Explore the Ayurveda's \nRichness: Enroll in Our \nComprehensive \nTraining Program`,
     contentText: `Join our Ayurvedic Training Course and immerse 
 yourself in the depth of timeless knowledge. 
-Empower yourself with the holistic principles that guide well-being.`,
+Empower yourself with the holistic principles \nthat guide well-being.`,
     btnText: "Explore Program",
     path: "/program",
-    color: 'tertiary',
   },
   {
     id: 3,
-    bannerImg: heroBanner3,
+    bannerImg: heroBanner4,
     title: `Rediscover Balance and \nHarmony with Our Array of \nAyurvedic Treatments`,
     contentText: `Experience the profound impact of Ayurvedic 
 treatments at SV Ayurved. Our therapies restore 
@@ -254,7 +252,32 @@ equilibrium in body, mind, and spirit, nurturing
 your overall wellness.`,
     btnText: "Know More",
     path: "/treatments",
-    color: 'primary',
+  },
+];
+
+/************ hero-banner content Data ************/
+export const Main_Banner_Data = [
+  {
+    id: 1,
+    title: `Reveal the Essence of \nSV Ayurved: Where \nHealing Becomes Life`,
+    contentText: `Step into our tranquil haven, where traditional \nhealing merges seamlessly with compassionate \ncare, leading you on a profound transformation \ntowards holistic wellness.`,
+    btnText: "About Us",
+    path: "/about",
+  },
+
+  {
+    id: 2,
+    title: `Explore the Ayurveda's \nRichness: Enroll in Our \nComprehensive Training Program`,
+    contentText: `Join our Ayurvedic Training Course and immerse \nyourself in the depth of timeless knowledge. \nEmpower yourself with the holistic principles \nthat guide well-being.`,
+    btnText: "Explore Program",
+    path: "/program",
+  },
+  {
+    id: 3,
+    title: `Rediscover Balance and \nHarmony with Our \nArray of Ayurvedic Treatments`,
+    contentText: `Experience the profound impact of Ayurvedic \ntreatments at SV Ayurved. Our therapies restore \nequilibrium in body, mind, and spirit, nurturing \nyour overall wellness.`,
+    btnText: "Know More",
+    path: "/treatments",
   },
 ];
 
@@ -371,7 +394,7 @@ export const FounderIntro = {
   heroImg: founder,
   name: "Dr. Jyoti Shinde",
   education: `BAMS.MD [kaychikitsa]DCC.DCT.DCL. 
-Ayurved Vachaspati, Panchakarma Visharad Reg.no.- I-67370-A`,
+Ayurved Vachaspati, \nPanchakarma Visharad \nReg.no.- I-67370-A`,
   introText: `Meet the visionary behind SVayurved - Dr. Jyoti Shinde. With a proud Indian heritage deeply rooted in Maharashtrian culture, Dr. Jyoti brings over 10+ years of experience as an Ayurvedic Vaidya who treats a range of medical issues.
   
 She embraces the core Ayurvedic principle that every patient is distinct and deserving of individualized care [purusham purusham veekshya]. Dr. Jyoti is a well-respected Ayurvedic physician as well as a recognized gynecologist, infertiologist, dermatologist, and cosmetologist. She is driven by her enthusiasm for offering holistic treatments.
@@ -431,7 +454,7 @@ export const Team_Details = [
   {
     id: 4,
     img: member4,
-    name: "Dr.Hrujuta B",
+    name: "Dr. Hrujuta B",
     designation: "Ayurvedic Child Psychologist",
   },
   {

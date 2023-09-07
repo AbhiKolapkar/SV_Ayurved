@@ -10,12 +10,8 @@
 }
 
 .timeline .container .textBox {
-  /* padding: 20px 15px; */
-  /* background-color: #FFFFFF; */
   position: relative;
-  /* border-radius: 30px; */
   font-size: 1rem;
-  /* box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.3); */
 }
 
 .textBox .title {
@@ -28,6 +24,10 @@
   background-color: #FFFFFF;
   box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 30px;
+}
+
+.textBox pre p {
+  padding: 0;
 }
 
 .timeline .container.right {

@@ -3,9 +3,10 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { RotatingSquare } from "react-loader-spinner";
 import { Title } from "../../components/Title/Title";
 import { Contacts_Data } from "../../data/constant";
-import logo from "../../assets/icons/SV_Logo.svg";
+import logo from "../../assets/icons/logo_favicon.svg";
 import { InputField } from "../../components/Custom_Inputs/InputField";
 import { ReactComponent as MailIcon } from "../../assets/icons/mail.svg";
 import { ReactComponent as MessageIcon } from "../../assets/icons/message.svg";
@@ -19,9 +20,10 @@ import {
 } from "../../components/Custom_Inputs/validation";
 import { CONTACT_API_URL } from "../../data/constant";
 import styles from "./style.module.css";
-import { RotatingSquare } from "react-loader-spinner";
+import useDocTitle from "../../hooks/useDocTitle";
 
 const Contact = () => {
+  useDocTitle('Contact US')
   const {
     handleSubmit,
     register,
@@ -181,8 +183,8 @@ const Contact = () => {
                   >
                     {isLoading ? (
                       <RotatingSquare
-                        width={40}
-                        height={40}
+                        width={30}
+                        height={30}
                         color="#eef2d6"
                         strokeWidth={2}
                         ariaLabel="rotating-square-loading"

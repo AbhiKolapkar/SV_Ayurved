@@ -29,8 +29,10 @@ import { ReactComponent as PhoneIcon } from "../../assets/icons/phone.svg";
 import { ReactComponent as ProfileIcon } from "../../assets/icons/profile.svg";
 import { PROGRAMS_API_URL } from "../../data/constant";
 import styles from "./style.module.css";
+import useDocTitle from "../../hooks/useDocTitle";
 
 const Program = () => {
+  useDocTitle('Program')
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const { programBanner } = BannerImages_Data;
   const {

@@ -4,8 +4,10 @@ import { Title } from "../../components/Title/Title";
 import Scroll from "../../components/Infinite_Scroll/Scroll";
 import BlogCard from "../../components/Blog_Card/BlogCard";
 import { BLOGS_API_URL } from "../../data/constant";
+import useDocTitle from "../../hooks/useDocTitle";
 
 const Blogs = () => {
+  useDocTitle('Blogs')
   const isMobile = useMediaQuery("(max-width:" + 600 + "px)");
   const [blogsData, setBlogsData] = useState([]);
 
