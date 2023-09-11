@@ -11,6 +11,8 @@ import Blogs from '../pages/Blogs'
 import BlogDetails from '../pages/Blog_Details'
 import Updates from '../pages/Updates'
 import Contact from '../pages/Contact'
+import PrivacyPolicy from '../pages/PrivacyPolicy'
+import Terms from '../pages/Terms'
 
 const Router = () => {
   return (
@@ -26,6 +28,8 @@ const Router = () => {
       <Route path={PATHS.BLOG_DETAILS_PAGE} Component={BlogDetails} />
       <Route path={PATHS.UPDATES_PAGE} Component={Updates} />
       <Route path={PATHS.CONTACT_PAGE} Component={Contact} />
+      <Route path={PATHS.PRIVACY_POLICY_PAGE} Component={PrivacyPolicy} />
+      <Route path={PATHS.TERMS_CONDITIONS_PAGE} Component={Terms} />
     </Routes>
   )
 }

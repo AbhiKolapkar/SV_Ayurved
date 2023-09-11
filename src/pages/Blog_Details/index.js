@@ -3,10 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { BLOG_DETAILS_API_URL } from "../../data/constant";
-import styles from "./style.module.css";
 import { Title } from "../../components/Title/Title";
 import useDocTitle from "../../hooks/useDocTitle";
 import Fallback from "../../common/Fallback";
+import './style.css'
 
 const BlogDetails = () => {
   useDocTitle("Blog Details");
@@ -46,7 +46,7 @@ const BlogDetails = () => {
                   src={image}
                   alt=""
                   loading="lazy"
-                  className={styles.blogImg}
+                  className='blogImg'
                 />
               </div>
             </Container>
@@ -58,7 +58,7 @@ const BlogDetails = () => {
 
           <section className="section">
             <Container maxWidth="lg">
-              <div className={styles.blogs_info}>
+              <div className='blogs_info'>
                 <Typography variant="subtitle1" color={"text.tertiary"}>
                   <sup>{date}</sup>
                 </Typography>
@@ -74,7 +74,7 @@ const BlogDetails = () => {
 
                 <div
                   dangerouslySetInnerHTML={{ __html: content }}
-                  className={styles.content}
+                  className='blog_content'
                 />
               </div>
             </Container>

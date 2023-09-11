@@ -3,7 +3,7 @@ import hero_banner1 from "../assets/banners/Hero_Banner_1.jpg";
 import hero_banner2 from "../assets/banners/Hero_Banner_2.jpg";
 import hero_banner3 from "../assets/banners/Hero_Banner_3.jpg";
 import hero_banner4 from "../assets/banners/Hero_Banner_4.jpg";
-import about_banner from "../assets/banners/about_us_banner.jpg";
+import about_banner from "../assets/banners/about_us_banner.png";
 import treatment_banner from "../assets/banners/treatment_banner.png";
 import session_banner from "../assets/banners/session_banner.png";
 import program_banner from "../assets/banners/program_banner.png";

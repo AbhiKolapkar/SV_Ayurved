@@ -174,17 +174,17 @@ export const SocialLinks_Data = [
   {
     id: 1,
     platform: linkedin,
-    path: "",
+    path: "https://www.linkedin.com/in/dr-jyoti-shinde-50953453/",
   },
   {
     id: 2,
     platform: facebook,
-    path: "",
+    path: "https://www.facebook.com/profile.php?id=100064048568370",
   },
   {
     id: 3,
     platform: instagram,
-    path: "",
+    path: "https://www.instagram.com/js_2313/",
   },
   {
     id: 4,

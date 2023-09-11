@@ -49,7 +49,7 @@ const Tabs = ({ data }) => {
           <SubTitle
             key={item.title}
             title={`SV- ${item.title}`}
-            subText={item.desc}
+            // subText={item.desc}
           />
         ))}
       </Container>

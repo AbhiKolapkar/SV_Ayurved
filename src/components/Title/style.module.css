@@ -25,13 +25,16 @@
 }
 
 .subTitle {
+  width: max-content;
   font-family: var(--poppins);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
   line-height: 185%;
   text-align: center;
   color: var(--dark-green);
+  margin: auto;
+  border-bottom: 1px solid var(--dark-blue);
 }
 
 .subText { 
@@ -42,4 +45,11 @@
   line-height: 178%;
   text-align: center;
   color: var(--dark-blue);
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .subTitle {
+    font-size: 1.5rem;
+  }
 }

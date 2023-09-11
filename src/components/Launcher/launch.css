@@ -1,0 +1,64 @@
+.launch-timer {
+  background: linear-gradient(to right, #0f424d, #869633);  /* Set your linear gradient */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.launch-timer::before {
+  content: '';
+  background-image: url('../../assets/launch_banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+.launch-timer h1 {
+  font-size: 45px;
+  margin-bottom: 100px;
+  color: #FFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-item {
+  margin: 0 30px;
+  font-size: 36px;
+  color: #869633;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: bounce 1s ease infinite; /* Add a bounce animation */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.timer-item span {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0f424d;
+}
+
+.timer-item p {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 15px;
+}

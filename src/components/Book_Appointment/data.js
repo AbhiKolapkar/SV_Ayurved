@@ -58,6 +58,11 @@ export const listOfDoctors = [
         startTime: "10:00 AM",
         endTime: "08:30 PM",
       },
+      {
+        day: "Sunday",
+        startTime: "10:00 AM",
+        endTime: "08:30 PM",
+      },
     ],
 
     restSchedule: [
@@ -88,6 +93,11 @@ export const listOfDoctors = [
       },
       {
         day: "Saturday",
+        startTime: "02:00 PM",
+        endTime: "05:00 PM",
+      },
+      {
+        day: "Sunday",
         startTime: "02:00 PM",
         endTime: "05:00 PM",
       },

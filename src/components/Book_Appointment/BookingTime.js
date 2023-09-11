@@ -9,6 +9,7 @@ import {
   get24HrsFrmAMPM,
   getAMPMFrm24Hrs,
   getTotalTimeSlots,
+  istTime,
   normaliseDateToReadableString,
 } from "./utils";
 
@@ -22,10 +23,11 @@ const BookingTime = ({
   const START_DATE = new Date();
   const END_DATE = addMonthsToDate(new Date(), BOOKING_DURATION_MONTHS);
 
-  const [timeDisplay, setTimeDisplay] = useState();
+  const [timeDisplay, setTimeDisplay] = useState([]);
   const [calendarDate, setCalendarDate] = useState(START_DATE);
   const [calendarDisplay, setCalendarDisplay] = useState(false);
   const [bookedAppointments, setBookedAppointments] = useState([]);
+  const [msg, setMsg] = useState('')
 
   // setup booked-appointments in date and timeSlot object keys
   useEffect(() => {
@@ -47,6 +49,12 @@ const BookingTime = ({
   };
 
   const getWorkingTimeSlots = (selectedDate) => {
+    const dayOfWeek = selectedDate.getUTCDay()
+    if(dayOfWeek === 0) {
+      selectedDate.setDate(selectedDate.getDate() + 1)
+    }
+
+
     let currentTime = new Date().getTime();
     let totalWorkingSlots = getTotalTimeSlots(
       selectedProfile.workSchedule,
@@ -83,22 +91,24 @@ const BookingTime = ({
 
     const bookedTimeSlots = bookedAppointments
       .filter(
-        (appointment) => normaliseDateToReadableString(appointment.date) === selectedDateString
+        (appointment) =>
+          normaliseDateToReadableString(appointment.date) === selectedDateString
       )
       .map((appointment) => appointment.timeSlot);
 
-    const availableTimeSlots = totalWorkingTimeSlots.map(slot => {
-      if(!bookedTimeSlots.includes(slot)) return {available: true, slot}
-      return {available: false, slot}
-    })
+    const availableTimeSlots = totalWorkingTimeSlots.map((slot) => {
+      if (!bookedTimeSlots.includes(slot)) return { available: true, slot };
+      return { available: false, slot };
+    });
 
     return availableTimeSlots;
   };
 
   const onCalenderClick = (val, _eve) => {
     setCalendarDate(val);
+    setMsg('Loading...')
 
-    setTimeout(() => onCalendarDisplay(), 600)
+    setTimeout(() => onCalendarDisplay(), 600);
   };
 
   const onTimeSelect = (e) => {
@@ -123,6 +133,19 @@ const BookingTime = ({
     setTimeDisplay(fetchAvailableTimeSlots());
     setCalendarDisplay(false);
   }, [calendarDate, bookedAppointments]);
+
+  const availableTimeSlots = fetchAvailableTimeSlots()
+  useEffect(() => {
+    if(availableTimeSlots.length===0) {
+      const nextDate = new Date(calendarDate)
+      nextDate.setDate(nextDate.getDate() + 1)
+      setCalendarDate(nextDate)
+      setMsg('No time slots available')
+    }
+    else {
+      setMsg('')
+    }
+  }, [availableTimeSlots, calendarDate])
 
   const renderTimeResponseDisplay = () => {
     if (selectedTime) {
@@ -190,7 +213,7 @@ const BookingTime = ({
 
           <div className="time-selector">
             {timeDisplay
-              ? timeDisplay.map(({available, slot}, i) => (
+              ? timeDisplay.map(({ available, slot }, i) => (
                   <button
                     key={i}
                     type="button"
