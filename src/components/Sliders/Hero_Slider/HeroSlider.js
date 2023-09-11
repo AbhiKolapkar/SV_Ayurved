@@ -49,6 +49,7 @@ const HeroSlider = () => {
                             variant="body1"
                             color={color}
                             fontSize={{ xs: "0.75rem", sm: "1rem" }}
+                            sx={{display: {xs: 'none', md: 'block'}}}
                           >
                             {contentText}
                           </Typography>

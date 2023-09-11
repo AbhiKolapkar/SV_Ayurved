@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './launch.css';
 
 const LaunchTimer = ({ onLaunchTimeReached }) => {
-  const launchTimeIST = new Date('2023-09-11T18:00:00+05:30'); // Set your website's launch time in IST
+  const launchTimeIST = new Date('2023-09-11T18:15:00+05:30'); // Set your website's launch time in IST
 
   const calculateTimeRemaining = () => {
     const currentTimeIST = new Date();

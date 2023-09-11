@@ -16,9 +16,9 @@ import Accordion from "../../components/Accordion/Accordion";
 import Card from "../../components/Card/Card";
 import Counter from "../../components/Counter/Counter";
 import { TREATMENTS_API_URL } from "../../data/constant";
-import styles from "./style.module.css";
 import useDocTitle from "../../hooks/useDocTitle";
 import HeroBanner from "../../components/Sliders/Hero_Banner/HeroBanner";
+import styles from "./style.module.css";
 
 const Home = () => {
   useDocTitle("Home");
@@ -51,7 +51,7 @@ const Home = () => {
             <HeroSlider />
           </Container>
         ) : (
-          <HeroBanner />
+          <HeroSlider />
         )}
       </section>
 
