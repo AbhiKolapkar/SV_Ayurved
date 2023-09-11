@@ -30,7 +30,7 @@ const LaunchTimer = ({ onLaunchTimeReached }) => {
   const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
   return (
-    <div className="launch-timer">
+    <div className={`launch-timer ${timeRemaining <= 0 ? 'hidden' : ''}`}>
       <h1>We are Launching Soon</h1>
       <div className="timer">
         <div className="timer-item">
