@@ -106,6 +106,10 @@
     margin-bottom: 0.25rem;
   }
 
+  .clientBox div[class^="slick-slider"] {
+    width: 95%;
+  }
+
   .floating-whatsapp-button {
     right: 0.5rem;
   }

@@ -21,7 +21,6 @@
 .slick-slide img {
   display: inline-block;
   width: 100%;
-  height: 250px;
 }
 
 .card-slider .slick-arrow img {
@@ -75,7 +74,9 @@
 
 .member-card img {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 1.875rem;
 }
 
 .member-card .member-info {

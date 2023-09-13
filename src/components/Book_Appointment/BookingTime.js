@@ -22,12 +22,17 @@ const BookingTime = ({
   const BOOKING_DURATION_MONTHS = 2;
   const START_DATE = new Date();
   const END_DATE = addMonthsToDate(new Date(), BOOKING_DURATION_MONTHS);
+  const IST_OFFSET = 5.5 * 60 * 60 * 1000; // IST offset in milliseconds
 
   const [timeDisplay, setTimeDisplay] = useState([]);
   const [calendarDate, setCalendarDate] = useState(START_DATE);
   const [calendarDisplay, setCalendarDisplay] = useState(false);
   const [bookedAppointments, setBookedAppointments] = useState([]);
   const [msg, setMsg] = useState('')
+
+  if(START_DATE.getUTCDay() === 0) {
+    START_DATE.setDate(START_DATE.getDate() + 1)
+  }
 
   // setup booked-appointments in date and timeSlot object keys
   useEffect(() => {
@@ -49,12 +54,6 @@ const BookingTime = ({
   };
 
   const getWorkingTimeSlots = (selectedDate) => {
-    const dayOfWeek = selectedDate.getUTCDay()
-    if(dayOfWeek === 0) {
-      selectedDate.setDate(selectedDate.getDate() + 1)
-    }
-
-
     let currentTime = new Date().getTime();
     let totalWorkingSlots = getTotalTimeSlots(
       selectedProfile.workSchedule,

@@ -1,36 +1,31 @@
-import React, { useState } from "react";
-import LaunchTimer from "./components/Launcher/LaunchTimer";
+import React, { useEffect } from "react";
+import ReactGA from "react-ga4";
 import Header from "./components/header/Header";
 import Router from "./routes/Router";
 import Footer from "./components/footer/Footer";
 import WhatsApp from "./common/WhatsApp";
+import InitializeGoogleAnalytics from "./google-analytics";
 import "./App.css";
 
 function App() {
-  const [launchTimeReached, setLaunchTimeReached] = useState(false);
-
-  const handleLaunchTimeReached = () => {
-    setLaunchTimeReached(true);
-  };
-
+  useEffect(() => {
+    InitializeGoogleAnalytics();
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+      title: window.location.pathname + window.location.search,
+    });
+  }, []);
   return (
     <>
-      {!launchTimeReached ? (
-        <LaunchTimer onLaunchTimeReached={handleLaunchTimeReached} />
-      ) : (
-        <>
-          <>
-            <Header />
+      <Header />
 
-            <main>
-              <WhatsApp />
-              <Router />
-            </main>
+      <main>
+        <WhatsApp />
+        <Router />
+      </main>
 
-            <Footer />
-          </>
-        </>
-      )}
+      <Footer />
     </>
   );
 }
