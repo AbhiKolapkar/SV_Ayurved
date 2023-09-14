@@ -5,13 +5,10 @@ import styles from "./style.module.css";
 
 const Accordion = ({ accordionData, bgColor }) => {
   const [clicked, setClicked] = useState(false);
-  const [isExpand, setIsExpand] = useState(false)
   const toggle = (index) => {
     if (clicked === index) {
-      setIsExpand(false)
       return setClicked(null); //if question is already active, then close it
     }
-    setIsExpand(true)
     setClicked(index);
   };
 

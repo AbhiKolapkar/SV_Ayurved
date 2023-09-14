@@ -3,6 +3,23 @@
   display: flex;
   column-gap: 5rem;
   margin-bottom: 18px;
+  color: #767676;
+}
+
+
+.blogs_info .date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blogs_info .date svg {
+  width: 18px;
+  height: 18px;
+}
+
+.blogs_info .date path {
+  fill: #767676;
 }
 
 .blog_content {
@@ -55,16 +72,5 @@
   .blogImg {
     width: 100%;
     height: 150px;
-  }
-  
-  .blogs_info {
-    flex-direction: column;
-  }
-
-  .blogs_info > :nth-child(1) {
-    text-align: left;
-  }
-  .blogs_info > :nth-child(2) {
-    text-align: right;
   }
 }

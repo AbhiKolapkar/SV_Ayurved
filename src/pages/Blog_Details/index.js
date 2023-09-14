@@ -6,7 +6,8 @@ import { BLOG_DETAILS_API_URL } from "../../data/constant";
 import { Title } from "../../components/Title/Title";
 import useDocTitle from "../../hooks/useDocTitle";
 import Fallback from "../../common/Fallback";
-import './style.css'
+import {ReactComponent as CalenderIcon} from '../../assets/icons/calendar.svg'
+import "./style.css";
 
 const BlogDetails = () => {
   useDocTitle("Blog Details");
@@ -25,7 +26,7 @@ const BlogDetails = () => {
       } catch (error) {
         console.log("Error", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     };
     fetchBlogDetails();
@@ -42,27 +43,27 @@ const BlogDetails = () => {
           <section className="section" key={id}>
             <Container maxWidth="xl">
               <div className="imgBox">
-                <img
-                  src={image}
-                  alt=""
-                  loading="lazy"
-                  className='blogImg'
-                />
+                <img src={image} alt="" loading="lazy" className="blogImg" />
               </div>
             </Container>
           </section>
 
-          <Container maxWidth="lg" className="section">
+          <Container maxWidth="lg">
             <Title title={title} />
           </Container>
 
           <section className="section">
             <Container maxWidth="lg">
-              <div className='blogs_info'>
-                <Typography variant="subtitle1" color={"text.tertiary"}>
-                  <sup>{date}</sup>
-                </Typography>
-                <Typography variant="subtitle1" color={"text.tertiary"}>
+              <div className="blogs_info">
+                <div className='date'>
+                  <CalenderIcon />
+                  <Typography variant="body2">
+                    {`${new Date(date).getDate()}/${
+                      new Date(date).getMonth() + 1
+                    }/${new Date(date).getFullYear()}`}
+                  </Typography>
+                </div>
+                <Typography variant="body2">
                   <sup>Category: {category}</sup>
                 </Typography>
               </div>
@@ -74,7 +75,7 @@ const BlogDetails = () => {
 
                 <div
                   dangerouslySetInnerHTML={{ __html: content }}
-                  className='blog_content'
+                  className="blog_content"
                 />
               </div>
             </Container>

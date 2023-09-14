@@ -1,12 +1,13 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import {ReactComponent as NextLine_img} from "../../assets/icons/next_line.svg";
+import { ReactComponent as NextLineImg } from "../../assets/icons/next_line.svg";
+import { ReactComponent as CalenderIcon } from "../../assets/icons/calendar.svg";
 import styles from "./style.module.css";
 
 const BlogCard = (props) => {
   const { id, image, date, category, title, desc, slug } = props;
-  const blogTitle = slug.split('/')[4]
+  const blogTitle = slug.split("/")[4];
 
   return (
     <>
@@ -18,14 +19,13 @@ const BlogCard = (props) => {
         </div>
 
         <div className={styles.blog_content}>
-          <div className={styles.info}>
-            <Typography variant="subtitle1" color="text.tertiary" className={styles.date}>
-              <sup>{date}</sup>
-            </Typography>
-            <Typography variant="subtitle1" color="text.tertiary" className={styles.category}>
-              <sup>Category: {category}</sup>
-            </Typography>
-          </div>
+          <Typography
+            variant="subtitle1"
+            color="text.tertiary"
+            className={styles.category}
+          >
+            <sup>Category: {category}</sup>
+          </Typography>
 
           <div className={styles.content}>
             <Typography
@@ -47,14 +47,25 @@ const BlogCard = (props) => {
             </pre>
           </div>
 
-          <button className={styles.read_moreBtn}>
-            <NavLink to={`/blog/${blogTitle}`}>
-              <Typography variant="button" color={"text.secondary"}>
-                Read More
+          <div className={styles.meta_info}>
+            <button className={styles.read_moreBtn}>
+              <NavLink to={`/blog/${blogTitle}`}>
+                <Typography variant="button" color={"text.secondary"}>
+                  Read More
+                </Typography>
+                <NextLineImg />
+              </NavLink>
+            </button>
+
+            <div className={styles.date}>
+              <CalenderIcon />
+              <Typography variant="body2">
+                {`${new Date(date).getDate()}/${
+                  new Date(date).getMonth() + 1
+                }/${new Date(date).getFullYear()}`}
               </Typography>
-              <NextLine_img />
-            </NavLink>
-          </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

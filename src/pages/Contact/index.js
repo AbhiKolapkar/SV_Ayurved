@@ -67,12 +67,7 @@ const Contact = () => {
 
         <Container maxWidth="xl" className="section">
           <div className={styles.location_map}>
-            {/* google-maps iframe generator */}
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://maps.google.com/maps?width=100%&amp;height=432&amp;hl=en&amp;q=Office%20no.110,%20Pallazo%20building,%20near%20Wisdom%20world%20school,%20Hadapsar,%20Pune-%20411%20028+(SV%20Ayurved)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3853398368983!2d73.9366907743195!3d18.51148086945358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c21c7a21ba03%3A0x82624d7f7040954c!2sSVayurved%20%3A%20A%20Trusted%20Marque%20in%20Ayurved!5e0!3m2!1sen!2sin!4v1694664297362!5m2!1sen!2sin" width="100%" height="100%" allowFullScreen></iframe>
           </div>
         </Container>
 
