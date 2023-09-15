@@ -199,8 +199,7 @@ export const Contacts_Data = [
     id: 1,
     icon: location,
     bgIcon: location_bg,
-    text: `Office no.110, Pallazo building, near Wisdom world school, Hadapsar, 
-Pune- 411 028`,
+    text: `Office no.110, Pallazo building, near Wisdom world school, Hadapsar, Pune- 411028`,
   },
   {
     id: 2,
