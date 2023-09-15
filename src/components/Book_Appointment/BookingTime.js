@@ -9,7 +9,6 @@ import {
   get24HrsFrmAMPM,
   getAMPMFrm24Hrs,
   getTotalTimeSlots,
-  istTime,
   normaliseDateToReadableString,
 } from "./utils";
 

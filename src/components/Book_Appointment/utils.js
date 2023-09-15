@@ -1,5 +1,4 @@
 import axios from "axios";
-import { DateTime } from "luxon";
 import { listOfDays, listOfMonths } from "./data";
 import { BOOKED_APPOINTMENT_API_URL } from "../../data/constant";
 
@@ -66,12 +65,6 @@ export const extractHourAndMinute = (timeString) => {
     .map((part) => parseInt(part, 10));
   return { hours, minutes };
 };
-
-export const istTime = (date) => {
-  const userDateTime = DateTime.fromJSDate(date)
-  const istDateTime = userDateTime.setZone('Asia/Kolkata')
-  return istDateTime.toISO()
-}
 
 /* ***** create time intervals ***** */
 export const createTimeIntervals = (startTime, endTime, interval) => {
