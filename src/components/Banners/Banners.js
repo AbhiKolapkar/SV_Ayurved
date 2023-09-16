@@ -25,7 +25,7 @@ export const QuoteBanner = ({ bgImg, quote }) => {
   );
 };
 
-export const CTA_Banner = ({ bgImg, text }) => {
+export const CtaBanner = ({ bgImg, text }) => {
   return (
     <>
       <Container

@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
               You have the right to access, update, or delete your personal
               information. If you have any concerns about your data, please
               contact us at{" "}
-              <a href="">
+              <a href="mailto:vishwavajraayurved@gmail.com">
                 <b>vishwavajraayurved@gmail.com</b>
               </a>
               .

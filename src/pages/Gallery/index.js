@@ -28,7 +28,7 @@ const Gallery = () => {
   // functionality for load more data
   useEffect(() => {
     setItems(images_data.slice(0, slice));
-  }, [Media_Data]);
+  }, [slice]);
 
   const loadMoreData = () => {
     setSlice(slice + 8);

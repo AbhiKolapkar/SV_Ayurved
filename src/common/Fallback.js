@@ -14,7 +14,7 @@ const Fallback = () => {
   const [showFallback, setShowFallback] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShowFallback(false), 1000);
+    const timeout = setTimeout(() => setShowFallback(false), 0);
 
     return () => clearTimeout(timeout);
   }, []);

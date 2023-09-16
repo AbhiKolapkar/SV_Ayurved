@@ -4,7 +4,7 @@ import axios from "axios";
 import HeroSlider from "../../components/Sliders/Hero_Slider/HeroSlider";
 import { BannerImages_Data, Home_Page_Images } from "../../data/images";
 import { Title } from "../../components/Title/Title";
-import { CTA_Banner, QuoteBanner } from "../../components/Banners/Banners";
+import { CtaBanner, QuoteBanner } from "../../components/Banners/Banners";
 import {
   Aarogyasutram_3Ps_Data,
   Faqs_Data,
@@ -17,7 +17,6 @@ import Card from "../../components/Card/Card";
 import Counter from "../../components/Counter/Counter";
 import { TREATMENTS_API_URL } from "../../data/constant";
 import useDocTitle from "../../hooks/useDocTitle";
-import HeroBanner from "../../components/Sliders/Hero_Banner/HeroBanner";
 import styles from "./style.module.css";
 
 const Home = () => {
@@ -31,13 +30,19 @@ const Home = () => {
   useEffect(() => {
     axios
       .get(TREATMENTS_API_URL)
-      .then((res) => setData(res.data.treatments))
+      .then((res) => {
+        const treatments = (res.data.treatments).map(item => {
+          return [...item.cards]
+        })
+        setData(treatments)
+      })
       .catch((error) => console.log(error));
-  }, [TREATMENTS_API_URL]);
-
-  const treatments = data.map((item) => {
-    const cards = item.cards;
-    cards.map((data) => allTreatments.push(data));
+  }, []);
+  
+  data.map((item) => {
+      return item.map((data) => {
+        return allTreatments.push(data)
+      });
   });
 
   allTreatments = allTreatments.slice(0, 9);
@@ -222,7 +227,7 @@ const Home = () => {
 
       {/* Call to Action section */}
       <section className="section">
-        <CTA_Banner
+        <CtaBanner
           bgImg={ctaBanner}
           text={"Take the First Step towards Optimal Health Now!"}
         />
