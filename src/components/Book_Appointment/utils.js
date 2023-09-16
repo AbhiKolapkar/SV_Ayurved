@@ -43,10 +43,11 @@ export const get24HrsFrmAMPM = (time) => {
  * @returns {number} return milliseconds of the date created with time parameter
  */
 export const timeToMilliseconds = (time) => {
-  const [hours, mins] = time.split(":");
-  const updateHours = new Date().setHours(hours);
-  const updateMinsAndHours = new Date(updateHours).setMinutes(mins);
-  return updateMinsAndHours;
+  const IST_OFFSET = 5.5 * 60 * 60 * 1000
+  const [hours, minutes] = time.split(":");
+  const updateHours = new Date().setHours(hours, 0, 0, 0);
+  const updateMinsAndHours = new Date(updateHours).setMinutes(minutes, 0, 0, 0);
+  return (updateMinsAndHours);
 };
 
 /**
@@ -118,4 +119,17 @@ export const fetchBookedAppointments = async () => {
     console.log('Error: ', error);
     throw new Error(error)
   }
+}
+
+
+export const getNextAvailableDate = (date) => {
+  const nextDate = new Date(date);
+  nextDate.setDate(nextDate.getDate() + 1); // Move to the next date
+
+  // Check if the next date is Sunday, and if so, set it to Monday
+  if (nextDate.getDay() === 0) {
+    nextDate.setDate(nextDate.getDate() + 1);
+  }
+
+  return nextDate;
 }

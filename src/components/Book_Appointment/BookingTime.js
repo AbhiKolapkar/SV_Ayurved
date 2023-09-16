@@ -8,6 +8,7 @@ import {
   fetchBookedAppointments,
   get24HrsFrmAMPM,
   getAMPMFrm24Hrs,
+  getNextAvailableDate,
   getTotalTimeSlots,
   normaliseDateToReadableString,
 } from "./utils";
@@ -20,8 +21,8 @@ const BookingTime = ({
 }) => {
   const BOOKING_DURATION_MONTHS = 2;
   const START_DATE = new Date();
+  START_DATE.setHours(START_DATE.getHours() + 5, START_DATE.getMinutes() + 30, 0, 0)
   const END_DATE = addMonthsToDate(new Date(), BOOKING_DURATION_MONTHS);
-  const IST_OFFSET = 5.5 * 60 * 60 * 1000; // IST offset in milliseconds
 
   const [timeDisplay, setTimeDisplay] = useState([]);
   const [calendarDate, setCalendarDate] = useState(START_DATE);
@@ -135,8 +136,7 @@ const BookingTime = ({
   const availableTimeSlots = fetchAvailableTimeSlots()
   useEffect(() => {
     if(availableTimeSlots.length===0) {
-      const nextDate = new Date(calendarDate)
-      nextDate.setDate(nextDate.getDate() + 1)
+      const nextDate = getNextAvailableDate(calendarDate)
       setCalendarDate(nextDate)
       setMsg('No time slots available')
     }
@@ -144,6 +144,7 @@ const BookingTime = ({
       setMsg('')
     }
   }, [availableTimeSlots, calendarDate])
+
 
   const renderTimeResponseDisplay = () => {
     if (selectedTime) {

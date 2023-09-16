@@ -256,9 +256,9 @@
 }
 
 .time-selector .time-button[disabled] {
-  background-color: #dfdfdf;
-  border: none;
-  color: #b6b6b6;
+  background-color: rgba(172, 189, 51, 0.2);
+  border: 1px solid rgba(172, 189, 51, 0.4);
+  color: #60682a85;
 }
 
 .bs-body .selection-response {
