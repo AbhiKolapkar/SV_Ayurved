@@ -5,10 +5,10 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "./theme/theme";
 import Fallback from "./common/Fallback";
 import { ToastContainer } from "react-toastify";
-
-import "./index.css";
-import "react-toastify/dist/ReactToastify.css";
 import ScrollToTop from "./common/ScrollToTop";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./index.css";
 
 const App = lazy(() => import("./App"));
 
@@ -19,10 +19,10 @@ root.render(
       <ScrollToTop>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Suspense fallback={<Fallback />}>
+          {/* <Suspense fallback={<Fallback />}> */}
             <ToastContainer />
             <App />
-          </Suspense>
+          {/* </Suspense> */}
         </ThemeProvider>
       </ScrollToTop>
     </BrowserRouter>

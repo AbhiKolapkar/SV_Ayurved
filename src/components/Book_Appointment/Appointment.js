@@ -5,6 +5,7 @@ import BookingTime from "./BookingTime";
 import BookingForm from "./BookingForm";
 import Success from "./Success";
 import "./style.css";
+import { CancelOutlined } from "@mui/icons-material";
 
 const Appointment = ({ cardTitle, handleClose }) => {
   const [selectedDoctor, setSelectedDoctor] = useState(listOfDoctors[0]);
@@ -34,6 +35,7 @@ const Appointment = ({ cardTitle, handleClose }) => {
           <div className="container-header">
             <h3 className="title">Book your appointment online</h3>
             <h4 className="subtitle">Fill in the following information</h4>
+            <CancelOutlined className="close" onClick={handleClose} />
           </div>
 
           <div className="container-body">

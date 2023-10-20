@@ -7,6 +7,7 @@
   padding: 4px 20px;
   border-radius: 1rem 1rem 0 0;
   background-color: var(--light-white);
+  position: relative;
 }
 
 .container h3 {
@@ -23,6 +24,16 @@
   font-style: normal;
   line-height: normal;
   color: var(--darker-green);
+}
+
+.container-header .close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: #a8771a;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .container-body {

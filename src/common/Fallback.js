@@ -14,7 +14,7 @@ const Fallback = () => {
   const [showFallback, setShowFallback] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShowFallback(false), 0);
+    const timeout = setTimeout(() => setShowFallback(false), 1000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -23,7 +23,7 @@ const Fallback = () => {
     return (
       <Container maxWidth="xl">
         <div style={loader}>
-          <Dna />
+          <Dna visible={true} width={80} height={80} />
         </div>
       </Container>
     );

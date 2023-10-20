@@ -1,29 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import Router from "./routes/Router";
 import Footer from "./components/footer/Footer";
 import WhatsApp from "./common/WhatsApp";
+import Fallback from "./common/Fallback";
+
 import "./App.css";
 
 function App() {
-  useEffect(() => {
-    // Initialize Google Analytics
-    window.gtag('config', 'G-VV0WG6ZDMJ')
+  const [isLoading, setIsLoading] = useState(true);
 
-    // Track pageview on initial load
-    window.gtag('event', 'page_view')
-  }, [])
+  // Simulate a delay for demonstration purposes
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Adjust the delay time as needed
+  }, []);
 
   return (
     <>
-      <Header />
+      {isLoading ? (
+        <Fallback />
+      ) : (
+        <>
+          <Header />
 
-      <main>
-        <WhatsApp />
-        <Router />
-      </main>
+          <main>
+            <WhatsApp />
+            <Router />
+          </main>
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

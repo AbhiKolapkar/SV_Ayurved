@@ -39,7 +39,7 @@ export const BookingBtn = ({isOnCard, title}) => {
 
       <Modal
         open={open}
-        onClose={handleClose}
+        // onClose={handleClose}
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         closeAfterTransition
